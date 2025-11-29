@@ -1,0 +1,202 @@
+{
+  "navigation": {
+    "features": "Features",
+    "impact": "Impact",
+    "pricing": "Pricing",
+    "writeResolution": "Write Resolution"
+  },
+  "hero": {
+    "badge": "Launching New Year 2026",
+    "arabic": "توازن — التوازن",
+    "title": "Find Your<br>Digital Balance",
+    "subtitle": "Reclaim your time. Protect your focus. Live with intention. Write your 2026 resolution—we'll send it back to you in a year.",
+    "writeResolutionBtn": "✍️ Write Resolution",
+    "seeFeaturesBtn": "See Features →",
+    "stickers": {
+      "timeSaved": "2.5h Saved",
+      "charity": "50% Charity",
+      "noAds": "No Ads"
+    },
+    "phone": {
+      "greeting": "Assalamu Alaikum 👋",
+      "todayBalance": "Today's Balance",
+      "screenTime": "Screen Time Today",
+      "blocked": "🔒 Blocked until Maghrib",
+      "quran": "✓ 45 min today",
+      "prayer": "✓ 5/5 Complete"
+    }
+  },
+  "timeCapsule": {
+    "title": "2026 Time Capsule",
+    "subtitle": "Write a message to your future self. We'll deliver it on January 1st, 2027—with your screen time journey.",
+    "form": {
+      "nameLabel": "Your Name",
+      "namePlaceholder": "What should we call you?",
+      "emailLabel": "Email Address",
+      "emailPlaceholder": "Where should we send it?",
+      "resolutionLabel": "Your 2026 Resolution",
+      "resolutionPlaceholder": "Write your resolution, hopes, dreams, or a letter to your future self...",
+      "helper": "💡 Be specific! Future you will appreciate the details.",
+      "prompts": {
+        "lessPhone": "📱 Less Phone",
+        "achievement": "🎯 Achievement",
+        "letterToSelf": "💌 Letter to Self",
+        "familyFocus": "👨‍👩‍👧‍👦 Family Focus",
+        "spiritualGrowth": "🕌 Spiritual Growth"
+      },
+      "promptTexts": {
+        "lessPhone": "In 2026, I want to spend less time on my phone and more time ",
+        "achievement": "By the end of 2026, I will have achieved ",
+        "letterToSelf": "Dear future me, I hope you have finally ",
+        "familyFocus": "I want to be more present with ",
+        "spiritualGrowth": "I want to strengthen my faith by "
+      },
+      "note": {
+        "title": "Your message is private.",
+        "text": "We'll store it securely and send it back with your Tawazn journey—time saved, streaks, and milestones."
+      },
+      "deliveryDate": "Delivery Date:",
+      "deliveryDateValue": "January 1st, 2027",
+      "submitBtn": "🚀 Seal My Capsule"
+    }
+  },
+  "features": {
+    "tag": "Features",
+    "title": "Everything You Need",
+    "subtitle": "Powerful tools for healthier digital habits",
+    "cards": [
+      {
+        "icon": "🚫",
+        "title": "Smart Blocking",
+        "desc": "Block distracting apps with unbreakable focus modes. Islamic motivational quotes when temptation strikes."
+      },
+      {
+        "icon": "📊",
+        "title": "Deep Analytics",
+        "desc": "See exactly where your time goes with beautiful charts. Track daily, weekly, monthly progress."
+      },
+      {
+        "icon": "🕌",
+        "title": "Prayer-Aware",
+        "desc": "Automatic blocking during salah times. Gentle reminders to step away and focus on what matters."
+      },
+      {
+        "icon": "🌙",
+        "title": "Ramadan Mode",
+        "desc": "Special features for the holy month—iftar schedules, Quran tracking, enhanced spiritual focus."
+      },
+      {
+        "icon": "👥",
+        "title": "Accountability",
+        "desc": "Connect with friends or family who can see your progress. Build better habits together."
+      },
+      {
+        "icon": "🏆",
+        "title": "Streaks & Wins",
+        "desc": "Celebrate consistency with daily streaks, achievements, and milestones. Every step counts."
+      }
+    ]
+  },
+  "impact": {
+    "tag": "Our Impact",
+    "title": "Every Subscription Gives Back",
+    "paragraph1": "We believe in business that does good. 50% of revenue goes directly to humanitarian causes. When you choose Tawazn, you're helping others too.",
+    "paragraph2": "In Islamic tradition, <strong>Sadaqah Jariyah</strong> is charity that keeps giving. Your subscription becomes ongoing charity.",
+    "statLabel": "Revenue to Charity",
+    "statNumber": "50%",
+    "statDesc": "Transparent • Verified Partners • Real Impact",
+    "causes": {
+      "education": "🎓 Education",
+      "water": "💧 Clean Water",
+      "food": "🍞 Food Security",
+      "health": "🏥 Healthcare"
+    }
+  },
+  "pricing": {
+    "tag": "Pricing",
+    "title": "Fair for Everyone",
+    "subtitle": "Prices adjust based on your country's purchasing power",
+    "cards": [
+      {
+        "name": "Free",
+        "price": "$0",
+        "period": "/ forever",
+        "features": [
+          "Basic tracking",
+          "3 app limits",
+          "Prayer reminders",
+          "Daily insights"
+        ],
+        "button": "Get Started"
+      },
+      {
+        "name": "Premium",
+        "price": "$4.99",
+        "period": "/ month",
+        "badge": "Most Popular",
+        "features": [
+          "Everything Free",
+          "Unlimited blocking",
+          "Advanced analytics",
+          "Ramadan mode",
+          "Accountability"
+        ],
+        "button": "Join Waitlist"
+      },
+      {
+        "name": "Blessed",
+        "price": "$9.99",
+        "period": "/ month",
+        "features": [
+          "Everything Premium",
+          "Family (5 devices)",
+          "Double charity",
+          "Charity dashboard",
+          "Early access"
+        ],
+        "button": "Join Waitlist"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Start 2026 with Balance",
+    "subtitle": "Join thousands ready to reclaim their time. Be first to know when we launch.",
+    "placeholder": "Enter your email",
+    "button": "Join Waitlist"
+  },
+  "footer": {
+    "description": "Helping you find balance in a distracted world. Built with purpose, designed for mindful living.",
+    "columns": {
+      "product": {
+        "title": "Product",
+        "links": ["Features", "Pricing", "Roadmap"]
+      },
+      "company": {
+        "title": "Company",
+        "links": ["Impact", "About", "Blog"]
+      },
+      "legal": {
+        "title": "Legal",
+        "links": ["Privacy", "Terms"]
+      }
+    },
+    "copyright": "© 2025 Tawazn. Made with ❤️ for mindful living."
+  },
+  "modal": {
+    "title": "Capsule Sealed!",
+    "message": "Your resolution is safely stored. We'll send it back with your Tawazn journey summary.",
+    "deliveryLabel": "See you on:",
+    "deliveryDate": "January 1st, 2027"
+  },
+  "meta": {
+    "title": "Tawazn - Find Your Digital Balance | 2026 Resolution",
+    "description": "Reclaim your time. Protect your focus. Live with balance. Write your 2026 resolution and get it back in a year.",
+    "lang": "en"
+  },
+  "waitlist": {
+    "success": {
+      "emoji": "🎉",
+      "title": "You're on the list!"
+    }
+  }
+}

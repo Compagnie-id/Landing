@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>i18n Test</title>
+    <style>
+        body {
+            font-family: Inter, sans-serif;
+            padding: 2rem;
+            line-height: 1.6;
+            background: #FFFBEB;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .test-section {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            border: 3px solid #1A1A2E;
+            background: white;
+        }
+        .test-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #1A1A2E;
+        }
+        .language-status {
+            padding: 1rem;
+            background: #6366F1;
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        .success { background: #4ADE80; }
+        .error { background: #F87171; }
+    </style>
+    <link rel="stylesheet" href="i18n.css">
+</head>
+<body>
+    <div class="container">
+        <div class="language-status" id="status">
+            Loading i18n system...
+        </div>
+
+        <div class="test-section">
+            <div class="test-title">Language Detection</div>
+            <p>Current Language: <strong id="currentLang">-</strong></p>
+            <p>Available Languages: <strong id="availableLangs">-</strong></p>
+        </div>
+
+        <div class="test-section">
+            <div class="test-title">Translation Test</div>
+            <p>Hero Title: <span id="heroTitle">-</span></p>
+            <p>Navigation Features: <span id="navFeatures">-</span></p>
+            <p>Price Free: <span id="priceFree">-</span></p>
+        </div>
+
+        <div class="test-section">
+            <div class="test-title">Manual Language Switch</div>
+            <button onclick="testLanguage('en')">English</button>
+            <button onclick="testLanguage('id')">Bahasa Indonesia</button>
+            <button onclick="testLanguage('ar')">العربية</button>
+        </div>
+    </div>
+
+    <script src="i18n.js"></script>
+    <script>
+        // Test function to check i18n functionality
+        function testI18n() {
+            const status = document.getElementById('status');
+            const currentLang = document.getElementById('currentLang');
+            const availableLangs = document.getElementById('availableLangs');
+            const heroTitle = document.getElementById('heroTitle');
+            const navFeatures = document.getElementById('navFeatures');
+            const priceFree = document.getElementById('priceFree');
+
+            try {
+                // Check if i18n is loaded
+                if (window.i18n) {
+                    status.textContent = '✅ i18n system loaded successfully!';
+                    status.className = 'language-status success';
+
+                    // Display current language
+                    const lang = window.i18n.getCurrentLanguage();
+                    currentLang.textContent = lang + ' (' + window.i18n.getLanguageName(lang) + ')';
+
+                    // Display available languages
+                    const langs = window.i18n.getAvailableLanguages().map(l => l.name).join(', ');
+                    availableLangs.textContent = langs;
+
+                    // Test translations
+                    heroTitle.textContent = window.i18n.t('hero.title').replace(/<br>/g, ' ');
+                    navFeatures.textContent = window.i18n.t('navigation.features');
+                    priceFree.textContent = window.i18n.t('pricing.cards.0.price') + ' ' + window.i18n.t('pricing.cards.0.period');
+
+                } else {
+                    throw new Error('i18n not loaded');
+                }
+            } catch (error) {
+                status.textContent = '❌ Error: ' + error.message;
+                status.className = 'language-status error';
+                console.error('i18n Test Error:', error);
+            }
+        }
+
+        // Test language switching
+        function testLanguage(lang) {
+            if (window.i18n) {
+                window.i18n.setLanguage(lang);
+                setTimeout(testI18n, 500); // Re-run tests after language change
+            }
+        }
+
+        // Run tests when i18n is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(testI18n, 1000);
+        });
+
+        // Listen for language changes
+        window.addEventListener('languageChanged', (e) => {
+            console.log('Language changed to:', e.detail.lang);
+            setTimeout(testI18n, 500);
+        });
+    </script>
+</body>
+</html>

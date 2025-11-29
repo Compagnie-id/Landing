@@ -1,0 +1,202 @@
+{
+  "navigation": {
+    "features": "Fitur",
+    "impact": "Dampak",
+    "pricing": "Harga",
+    "writeResolution": "Tulis Resolusi"
+  },
+  "hero": {
+    "badge": "Meluncur Tahun Baru 2026",
+    "arabic": "توازن — التوازن",
+    "title": "Temukan<br>Keseimbangan Digital Anda",
+    "subtitle": "Rebut kembali waktu Anda. Lindungi fokus Anda. Hidup dengan niat. Tulis resolusi 2026 Anda—kami akan mengembalikannya setahun kemudian.",
+    "writeResolutionBtn": "✍️ Tulis Resolusi",
+    "seeFeaturesBtn": "Lihat Fitur →",
+    "stickers": {
+      "timeSaved": "2.5 jam Tersimpan",
+      "charity": "50% Amal",
+      "noAds": "Tanpa Iklan"
+    },
+    "phone": {
+      "greeting": "Assalamu Alaikum 👋",
+      "todayBalance": "Keseimbangan Hari Ini",
+      "screenTime": "Waktu Layar Hari Ini",
+      "blocked": "🔒 Diblokir hingga Maghrib",
+      "quran": "✓ 45 menit hari ini",
+      "prayer": "✓ 5/5 Selesai"
+    }
+  },
+  "timeCapsule": {
+    "title": "Kapsul Waktu 2026",
+    "subtitle": "Tulis pesan untuk diri Anda di masa depan. Kami akan mengirimkannya pada 1 Januari 2027—bersama perjalanan waktu layar Anda.",
+    "form": {
+      "nameLabel": "Nama Anda",
+      "namePlaceholder": "Bagaimana kami memanggil Anda?",
+      "emailLabel": "Alamat Email",
+      "emailPlaceholder": "Ke mana kami mengirimkannya?",
+      "resolutionLabel": "Resolusi 2026 Anda",
+      "resolutionPlaceholder": "Tulis resolusi, harapan, mimpi, atau surat untuk diri Anda di masa depan...",
+      "helper": "💡 Spesifik! Diri Anda di masa depan akan menghargai detailnya.",
+      "prompts": {
+        "lessPhone": "📱 Kurangi Ponsel",
+        "achievement": "🎯 Pencapaian",
+        "letterToSelf": "💌 Surat untuk Diri Sendiri",
+        "familyFocus": "👨‍👩‍👧‍👦 Fokus Keluarga",
+        "spiritualGrowth": "🕌 Pertumbuhan Spiritual"
+      },
+      "promptTexts": {
+        "lessPhone": "Pada tahun 2026, saya ingin mengurangi waktu di ponsel dan lebih banyak waktu ",
+        "achievement": "Pada akhir 2026, saya akan mencapai ",
+        "letterToSelf": "Teman masa depan, saya harap Anda akhirnya ",
+        "familyFocus": "Saya ingin lebih hadir dengan ",
+        "spiritualGrowth": "Saya ingin memperkuat iman dengan "
+      },
+      "note": {
+        "title": "Pesan Anda pribadi.",
+        "text": "Kami akan menyimpannya dengan aman dan mengirimkannya kembali bersama perjalanan Tawazn Anda—waktu yang tersimpan, streak, dan milestone."
+      },
+      "deliveryDate": "Tanggal Pengiriman:",
+      "deliveryDateValue": "1 Januari 2027",
+      "submitBtn": "🚀 Segel Kapsul Saya"
+    }
+  },
+  "features": {
+    "tag": "Fitur",
+    "title": "Semua yang Anda Butuhkan",
+    "subtitle": "Alat kuat untuk kebiasaan digital yang lebih sehat",
+    "cards": [
+      {
+        "icon": "🚫",
+        "title": "Pemblokiran Cerdas",
+        "desc": "Blokir aplikasi yang mengganggu dengan mode fokus yang tak terpecahkan. Kutipan motivasi Islam ketika godaan muncul."
+      },
+      {
+        "icon": "📊",
+        "title": "Analisis Mendalam",
+        "desc": "Lihat tepat ke mana waktu Anda pergi dengan grafik yang indah. Lacak kemajuan harian, mingguan, bulanan."
+      },
+      {
+        "icon": "🕌",
+        "title": "Sadar Sholat",
+        "desc": "Pemblokiran otomatis saat waktu sholat. Pengingat lembut untuk menjauh dan fokus pada yang penting."
+      },
+      {
+        "icon": "🌙",
+        "title": "Mode Ramadan",
+        "desc": "Fitur khusus untuk bulan suci—jadwal iftar, pelacakan Quran, fokus spiritual yang ditingkatkan."
+      },
+      {
+        "icon": "👥",
+        "title": "Akuntabilitas",
+        "desc": "Terhubung dengan teman atau keluarga yang dapat melihat kemajuan Anda. Bangun kebiasaan lebih baik bersama."
+      },
+      {
+        "icon": "🏆",
+        "title": "Streak & Kemenangan",
+        "desc": "Rayakan konsistensi dengan streak harian, pencapaian, dan milestone. Setiap langkah berharga."
+      }
+    ]
+  },
+  "impact": {
+    "tag": "Dampak Kami",
+    "title": "Setiap Langganan Memberi Kembali",
+    "paragraph1": "Kami percaya pada bisnis yang melakukan kebaikan. 50% pendapatan langsung kepada kemanusiaan. Ketika Anda memilih Tawazn, Anda membantu orang lain juga.",
+    "paragraph2": "Dalam tradisi Islam, <strong>Sadaqah Jariyah</strong> adalah amal yang terus memberi. Langganan Anda menjadi amal yang berkelanjutan.",
+    "statLabel": "Pendapatan untuk Amal",
+    "statNumber": "50%",
+    "statDesc": "Transparan • Mitra Terverifikasi • Dampak Nyata",
+    "causes": {
+      "education": "🎓 Pendidikan",
+      "water": "💧 Air Bersih",
+      "food": "🍞 Keamanan Pangan",
+      "health": "🏥 Kesehatan"
+    }
+  },
+  "pricing": {
+    "tag": "Harga",
+    "title": "Adil untuk Semua",
+    "subtitle": "Harga disesuaikan berdasarkan daya beli negara Anda",
+    "cards": [
+      {
+        "name": "Gratis",
+        "price": "Rp 0",
+        "period": "/ selamanya",
+        "features": [
+          "Pelacakan dasar",
+          "Batas 3 aplikasi",
+          "Pengingat sholat",
+          "Wawasan harian"
+        ],
+        "button": "Mulai"
+      },
+      {
+        "name": "Premium",
+        "price": "Rp 79.000",
+        "period": "/ bulan",
+        "badge": "Paling Populer",
+        "features": [
+          "Semua Gratis",
+          "Pemblokiran tak terbatas",
+          "Analitik lanjutan",
+          "Mode Ramadan",
+          "Akuntabilitas"
+        ],
+        "button": "Gabung Waitlist"
+      },
+      {
+        "name": "Berkah",
+        "price": "Rp 159.000",
+        "period": "/ bulan",
+        "features": [
+          "Semua Premium",
+          "Keluarga (5 perangkat)",
+          "Amal ganda",
+          "Dashboard amal",
+          "Akses awal"
+        ],
+        "button": "Gabung Waitlist"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Mulai 2026 dengan Keseimbangan",
+    "subtitle": "Bergabung dengan ribuan yang siap merebut kembali waktu mereka. Jadilah yang pertama tahu saat kami meluncur.",
+    "placeholder": "Masukkan email Anda",
+    "button": "Gabung Waitlist"
+  },
+  "footer": {
+    "description": "Membantu Anda menemukan keseimbangan di dunia yang terganggu. Dibangun dengan tujuan, dirancang untuk hidup sadar.",
+    "columns": {
+      "product": {
+        "title": "Produk",
+        "links": ["Fitur", "Harga", "Peta Jalan"]
+      },
+      "company": {
+        "title": "Perusahaan",
+        "links": ["Dampak", "Tentang", "Blog"]
+      },
+      "legal": {
+        "title": "Legal",
+        "links": ["Privasi", "Syarat"]
+      }
+    },
+    "copyright": "© 2025 Tawazn. Dibuat dengan ❤️ untuk hidup sadar."
+  },
+  "modal": {
+    "title": "Kapsul Disegel!",
+    "message": "Resolusi Anda tersimpan dengan aman. Kami akan mengirimkannya kembali bersama ringkasan perjalanan Tawazn Anda.",
+    "deliveryLabel": "Sampai jumpa pada:",
+    "deliveryDate": "1 Januari 2027"
+  },
+  "meta": {
+    "title": "Tawazn - Temukan Keseimbangan Digital Anda | Resolusi 2026",
+    "description": "Rebut kembali waktu Anda. Lindungi fokus Anda. Hidup dengan keseimbangan. Tulis resolusi 2026 Anda dan dapatkan kembali setahun kemudian.",
+    "lang": "id"
+  },
+  "waitlist": {
+    "success": {
+      "emoji": "🎉",
+      "title": "Anda ada di daftar!"
+    }
+  }
+}

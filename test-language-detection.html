@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Detection Test</title>
+    <style>
+        body {
+            font-family: Inter, sans-serif;
+            padding: 2rem;
+            line-height: 1.6;
+            background: #FFFBEB;
+        }
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .test-card {
+            padding: 1.5rem;
+            border: 3px solid #1A1A2E;
+            background: white;
+            border-radius: 8px;
+        }
+        .test-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #1A1A2E;
+        }
+        .test-result {
+            padding: 0.5rem;
+            background: #4ADE80;
+            color: white;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: #6366F1;
+            color: white;
+            border: 3px solid #1A1A2E;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 0.25rem;
+        }
+        .btn:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 2px 2px 0px #1A1A2E;
+        }
+        .current-language {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+            padding: 1rem;
+            background: #6366F1;
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="current-language" id="currentLanguage">
+        Detecting language...
+    </div>
+
+    <div class="test-grid">
+        <div class="test-card">
+            <div class="test-title">🇺🇸 English</div>
+            <button class="btn" onclick="testLanguage('en')">Set to English</button>
+            <button class="btn" onclick="openWithLang('en')">Open with English</button>
+        </div>
+
+        <div class="test-card">
+            <div class="test-title">🇮🇩 Bahasa Indonesia</div>
+            <button class="btn" onclick="testLanguage('id')">Set to Indonesian</button>
+            <button class="btn" onclick="openWithLang('id')">Open with Indonesian</button>
+        </div>
+
+        <div class="test-card">
+            <div class="test-title">🇸🇦 العربية</div>
+            <button class="btn" onclick="testLanguage('ar')">Set to Arabic</button>
+            <button class="btn" onclick="openWithLang('ar')">Open with Arabic</button>
+        </div>
+    </div>
+
+    <div class="test-card" style="margin-top: 2rem;">
+        <div class="test-title">🔍 Browser Language Detection</div>
+        <div id="browserInfo">
+            Loading browser info...
+        </div>
+    </div>
+
+    <script src="i18n.js"></script>
+    <script>
+        function updateDisplay() {
+            if (window.i18n) {
+                const lang = window.i18n.getCurrentLanguage();
+                const langName = window.i18n.getLanguageName(lang);
+                document.getElementById('currentLanguage').innerHTML = `
+                    🌍 Current Language: ${langName} (${lang})
+                `;
+
+                // Show browser info
+                const browserInfo = `
+                    <strong>Browser Language:</strong> ${navigator.language || 'unknown'}<br>
+                    <strong>User Language:</strong> ${navigator.userLanguage || 'unknown'}<br>
+                    <strong>Detection Priority:</strong>
+                    <ol>
+                        <li>URL Parameter (?lang=en)</li>
+                        <li>localStorage saved preference</li>
+                        <li>Browser language detection</li>
+                        <li>Default to English</li>
+                    </ol>
+                `;
+                document.getElementById('browserInfo').innerHTML = browserInfo;
+            }
+        }
+
+        function testLanguage(lang) {
+            if (window.i18n) {
+                window.i18n.setLanguage(lang);
+                setTimeout(updateDisplay, 100);
+            }
+        }
+
+        function openWithLang(lang) {
+            const url = `tawazn-landing-final.html?lang=${lang}`;
+            window.open(url, '_blank');
+        }
+
+        // Initialize display
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                updateDisplay();
+                console.log('🌍 Language detected:', window.i18n?.getCurrentLanguage());
+            }, 1000);
+        });
+
+        // Listen for language changes
+        window.addEventListener('languageChanged', (e) => {
+            console.log('🔄 Language changed to:', e.detail.lang);
+            updateDisplay();
+        });
+    </script>
+</body>
+</html>

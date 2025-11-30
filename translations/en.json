@@ -7,36 +7,49 @@
   },
   "hero": {
     "badge": "Launching New Year 2026",
-    "arabic": "توازن — التوازن",
     "title": "Find Your<br>Digital Balance",
     "subtitle": "Reclaim your time. Protect your focus. Live with intention. Write your 2026 resolution—we'll send it back to you in a year.",
     "writeResolutionBtn": "✍️ Write Resolution",
-    "seeFeaturesBtn": "See Features →",
+    "seeFeaturesBtn": "Explore Tawazn →",
     "stickers": {
       "timeSaved": "2.5h Saved",
       "charity": "50% Charity",
       "noAds": "No Ads"
     },
     "phone": {
-      "greeting": "Assalamu Alaikum 👋",
+      "greeting": "Assalamu 'Alaikum 👋",
       "todayBalance": "Today's Balance",
       "screenTime": "Screen Time Today",
       "blocked": "🔒 Blocked until Maghrib",
       "quran": "✓ 45 min today",
-      "prayer": "✓ 5/5 Complete"
+      "prayer": "✓ 5/5 Complete",
+      "apps": {
+        "instagram": {
+          "name": "Instagram",
+          "status": "🔒 Blocked until Maghrib"
+        },
+        "quran": {
+          "name": "Quran",
+          "status": "✓ 45 min today"
+        },
+        "prayer": {
+          "name": "Prayer",
+          "status": "✓ 5/5 Complete"
+        }
+      }
     }
   },
   "timeCapsule": {
     "title": "2026 Time Capsule",
     "subtitle": "Write a message to your future self. We'll deliver it on January 1st, 2027—with your screen time journey.",
     "form": {
-      "nameLabel": "Your Name",
-      "namePlaceholder": "What should we call you?",
-      "emailLabel": "Email Address",
-      "emailPlaceholder": "Where should we send it?",
-      "resolutionLabel": "Your 2026 Resolution",
-      "resolutionPlaceholder": "Write your resolution, hopes, dreams, or a letter to your future self...",
-      "helper": "💡 Be specific! Future you will appreciate the details.",
+      "nameLabel": "Name",
+      "namePlaceholder": "Preferred name",
+      "emailLabel": "Email",
+      "emailPlaceholder": "Email address for delivery",
+      "resolutionLabel": "2026 Resolution",
+      "resolutionPlaceholder": "Write resolution, hopes, dreams, or a letter to future self...",
+      "helper": "💡 Be specific! Details will be greatly appreciated in the future.",
       "prompts": {
         "lessPhone": "📱 Less Phone",
         "achievement": "🎯 Achievement",
@@ -52,18 +65,19 @@
         "spiritualGrowth": "I want to strengthen my faith by "
       },
       "note": {
-        "title": "Your message is private.",
-        "text": "We'll store it securely and send it back with your Tawazn journey—time saved, streaks, and milestones."
+        "title": "Message is private.",
+        "text": "Message will be stored securely and sent back with Tawazn journey summary—time saved, streaks, and milestones."
       },
       "deliveryDate": "Delivery Date:",
       "deliveryDateValue": "January 1st, 2027",
-      "submitBtn": "🚀 Seal My Capsule"
+      "submitBtn": "🚀 Seal Capsule"
     }
   },
   "features": {
     "tag": "Features",
     "title": "Everything You Need",
     "subtitle": "Powerful tools for healthier digital habits",
+    "intro": "Tawazn is your digital wellness companion designed to help you find balance in a world filled with distractions. Rooted in Islamic principles, our app intelligently manages your screen time while encouraging spiritual growth and meaningful connections. Whether you're looking to reduce social media usage, focus during prayer times, or build healthier digital habits, Tawazn provides the tools and motivation you need to reclaim your time and live with intention.",
     "cards": [
       {
         "icon": "🚫",

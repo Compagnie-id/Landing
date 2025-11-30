@@ -132,7 +132,6 @@ class I18n {
 
     updateHero() {
         this.updateText('.hero-badge', 'hero.badge');
-        this.updateText('.hero-arabic', 'hero.arabic');
         this.updateHeroTitle();
         this.updateText('.hero-subtitle', 'hero.subtitle');
         this.updateText('.hero-actions .btn-primary', 'hero.writeResolutionBtn');
@@ -145,6 +144,9 @@ class I18n {
         this.updateText('.phone-greeting', 'hero.phone.greeting');
         this.updateText('.phone-date', 'hero.phone.todayBalance');
         this.updateText('.phone-time-label', 'hero.phone.screenTime');
+
+        // Update phone apps
+        this.updatePhoneApps();
     }
 
     updateHeroTitle() {
@@ -152,6 +154,20 @@ class I18n {
         if (titleElement) {
             titleElement.innerHTML = this.t('hero.title');
         }
+    }
+
+    updatePhoneApps() {
+        // Update Instagram app
+        this.updateText('.phone-app:nth-child(1) .phone-app-name', 'hero.phone.apps.instagram.name');
+        this.updateText('.phone-app:nth-child(1) .phone-app-status', 'hero.phone.apps.instagram.status');
+
+        // Update Quran app
+        this.updateText('.phone-app:nth-child(2) .phone-app-name', 'hero.phone.apps.quran.name');
+        this.updateText('.phone-app:nth-child(2) .phone-app-status', 'hero.phone.apps.quran.status');
+
+        // Update Prayer app
+        this.updateText('.phone-app:nth-child(3) .phone-app-name', 'hero.phone.apps.prayer.name');
+        this.updateText('.phone-app:nth-child(3) .phone-app-status', 'hero.phone.apps.prayer.status');
     }
 
     updateTimeCapsule() {
@@ -225,8 +241,15 @@ class I18n {
         this.updateText('.section-header .section-title', 'features.title');
         this.updateText('.section-header .section-subtitle', 'features.subtitle');
 
+        // Features introduction
+        this.updateFeaturesIntro();
+
         // Feature cards
         this.updateFeatureCards();
+    }
+
+    updateFeaturesIntro() {
+        this.updateText('.features-intro-text', 'features.intro');
     }
 
     updateFeatureCards() {
@@ -405,10 +428,14 @@ class I18n {
     setupLanguageSelector() {
         // Create language selector if it doesn't exist
         if (!document.querySelector('.language-selector')) {
-            const navLinks = document.querySelector('.nav-links');
-            if (navLinks) {
+            const isMobile = window.innerWidth <= 768;
+            const target = isMobile ?
+                document.querySelector('.nav-container') :
+                document.querySelector('.nav-links');
+
+            if (target) {
                 const selector = this.createLanguageSelector();
-                navLinks.appendChild(selector);
+                target.appendChild(selector);
             }
         }
 
@@ -429,13 +456,13 @@ class I18n {
             </button>
             <div class="language-dropdown">
                 <button data-lang="en" class="language-option">
-                    <span>English</span>
+                    <span>EN</span>
                 </button>
                 <button data-lang="id" class="language-option">
-                    <span>Bahasa Indonesia</span>
+                    <span>ID</span>
                 </button>
                 <button data-lang="ar" class="language-option">
-                    <span>العربية</span>
+                    <span>AR</span>
                 </button>
             </div>
         `;
@@ -496,11 +523,11 @@ class I18n {
 
     getLanguageName(lang) {
         const names = {
-            'en': 'English',
-            'id': 'Bahasa Indonesia',
-            'ar': 'العربية'
+            'en': 'EN',
+            'id': 'ID',
+            'ar': 'AR'
         };
-        return names[lang] || lang;
+        return names[lang] || lang.toUpperCase();
     }
 
     setupRTL() {
@@ -521,16 +548,42 @@ class I18n {
     // Method to get available languages
     getAvailableLanguages() {
         return [
-            { code: 'en', name: 'English', flag: '🇺🇸' },
-            { code: 'id', name: 'Bahasa Indonesia', flag: '🇮🇩' },
-            { code: 'ar', name: 'العربية', flag: '🇸🇦' }
+            { code: 'en', name: 'EN' },
+            { code: 'id', name: 'ID' },
+            { code: 'ar', name: 'AR' }
         ];
+    }
+
+    // Method to handle language selector relocation on resize
+    handleLanguageSelectorResize() {
+        const selector = document.querySelector('.language-selector');
+        if (!selector) return;
+
+        const isMobile = window.innerWidth <= 768;
+        const currentParent = selector.parentElement;
+        const target = isMobile ?
+            document.querySelector('.nav-container') :
+            document.querySelector('.nav-links');
+
+        // Only relocate if target is different from current parent
+        if (target && target !== currentParent) {
+            target.appendChild(selector);
+        }
     }
 }
 
 // Initialize i18n when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
     window.i18n = new I18n();
+
+    // Add resize listener for language selector repositioning
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            window.i18n.handleLanguageSelectorResize();
+        }, 150); // Debounce resize events
+    });
 });
 
 // Export for module systems

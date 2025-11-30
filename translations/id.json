@@ -6,64 +6,78 @@
     "writeResolution": "Tulis Resolusi"
   },
   "hero": {
-    "badge": "Meluncur Tahun Baru 2026",
-    "arabic": "توازن — التوازن",
-    "title": "Temukan<br>Keseimbangan Digital Anda",
-    "subtitle": "Rebut kembali waktu Anda. Lindungi fokus Anda. Hidup dengan niat. Tulis resolusi 2026 Anda—kami akan mengembalikannya setahun kemudian.",
+    "badge": "Meluncur di Tahun Baru 2026!",
+    "title": "Kendalikan Waktu,<br>Seimbangkan Hidup",
+    "subtitle": "Waktumu terlalu berharga untuk terbuang! Kuatkan fokusmu dan kendalikan kembali hidupmu. Tulis resolusimu untuk 2026, kapsul waktu akan menyimpan dan mengembalikannya setahun kemudian.",
     "writeResolutionBtn": "✍️ Tulis Resolusi",
-    "seeFeaturesBtn": "Lihat Fitur →",
+    "seeFeaturesBtn": "Mengenal Tawazn →",
     "stickers": {
       "timeSaved": "2.5 jam Tersimpan",
       "charity": "50% Amal",
       "noAds": "Tanpa Iklan"
     },
     "phone": {
-      "greeting": "Assalamu Alaikum 👋",
+      "greeting": "Assalamu 'Alaikum 👋",
       "todayBalance": "Keseimbangan Hari Ini",
       "screenTime": "Waktu Layar Hari Ini",
       "blocked": "🔒 Diblokir hingga Maghrib",
       "quran": "✓ 45 menit hari ini",
-      "prayer": "✓ 5/5 Selesai"
+      "prayer": "✓ 5/5 Selesai",
+      "apps": {
+        "instagram": {
+          "name": "Instagram",
+          "status": "🔒 Diblokir hingga Maghrib"
+        },
+        "quran": {
+          "name": "Quran",
+          "status": "✓ 45 menit hari ini"
+        },
+        "prayer": {
+          "name": "Sholat",
+          "status": "✓ 5/5 Selesai"
+        }
+      }
     }
   },
   "timeCapsule": {
     "title": "Kapsul Waktu 2026",
     "subtitle": "Tulis pesan untuk diri Anda di masa depan. Kami akan mengirimkannya pada 1 Januari 2027—bersama perjalanan waktu layar Anda.",
     "form": {
-      "nameLabel": "Nama Anda",
-      "namePlaceholder": "Bagaimana kami memanggil Anda?",
-      "emailLabel": "Alamat Email",
-      "emailPlaceholder": "Ke mana kami mengirimkannya?",
-      "resolutionLabel": "Resolusi 2026 Anda",
-      "resolutionPlaceholder": "Tulis resolusi, harapan, mimpi, atau surat untuk diri Anda di masa depan...",
-      "helper": "💡 Spesifik! Diri Anda di masa depan akan menghargai detailnya.",
+      "nameLabel": "Nama",
+      "namePlaceholder": "Nama panggilan",
+      "emailLabel": "Email",
+      "emailPlaceholder": "Email tujuan pengiriman",
+      "resolutionLabel": "Resolusi 2026",
+      "resolutionPlaceholder": "Tulis resolusi, harapan, mimpi, atau surat untuk diri di masa depan...",
+      "helper": "💡 Lebih pesifik! 💡 Detail hari ini bisa jadi pengingat berharga di masa depan",
       "prompts": {
-        "lessPhone": "📱 Kurangi Ponsel",
+        "lessPhone": "📱 Kurangi main ponsel",
         "achievement": "🎯 Pencapaian",
-        "letterToSelf": "💌 Surat untuk Diri Sendiri",
-        "familyFocus": "👨‍👩‍👧‍👦 Fokus Keluarga",
-        "spiritualGrowth": "🕌 Pertumbuhan Spiritual"
+        "letterToSelf": "💌 Pesan untuk masa depan",
+        "familyFocus": "👨‍👩‍👧‍👦 Prioritaskan keluarga",
+        "spiritualGrowth": "🕌 Ketenangan batin"
       },
       "promptTexts": {
-        "lessPhone": "Pada tahun 2026, saya ingin mengurangi waktu di ponsel dan lebih banyak waktu ",
-        "achievement": "Pada akhir 2026, saya akan mencapai ",
-        "letterToSelf": "Teman masa depan, saya harap Anda akhirnya ",
+        "lessPhone": "Di tahun 2026, saya ingin mengurangi waktu di ponsel dan lebih banyak waktu ",
+        "achievement": "Di akhir 2026, saya akan mencapai ",
+        "letterToSelf": "Teman masa depan, saya harap akhirnya ",
         "familyFocus": "Saya ingin lebih hadir dengan ",
         "spiritualGrowth": "Saya ingin memperkuat iman dengan "
       },
       "note": {
-        "title": "Pesan Anda pribadi.",
-        "text": "Kami akan menyimpannya dengan aman dan mengirimkannya kembali bersama perjalanan Tawazn Anda—waktu yang tersimpan, streak, dan milestone."
+        "title": "Pesan terenkripsi.",
+        "text": "Setelah kamu menyegel kapsul, pesanmu akan disimpan dengan aman dan dikirim ke email yang kamu tentukan. Tanggal pengiriman bisa kamu atur sesuai momen yang kamu inginkan. Semoga kelak kamu menerimanya dalam keadaan sehat dan berhasil dalam segala pencapaian."
       },
       "deliveryDate": "Tanggal Pengiriman:",
       "deliveryDateValue": "1 Januari 2027",
-      "submitBtn": "🚀 Segel Kapsul Saya"
+      "submitBtn": "🚀 Segel Kapsul"
     }
   },
   "features": {
     "tag": "Fitur",
     "title": "Semua yang Anda Butuhkan",
     "subtitle": "Alat kuat untuk kebiasaan digital yang lebih sehat",
+    "intro": "Tawazn adalah pendamping kesehatan digital Anda yang dirancang untuk membantu Anda menemukan keseimbangan di dunia yang penuh dengan gangguan. Berakar pada prinsip-prinsip Islam, aplikasi kami secara cerdas mengelola waktu layar Anda sambil mendorong pertumbuhan spiritual dan koneksi yang bermakna. Apakah Anda ingin mengurangi penggunaan media sosial, fokus saat waktu sholat, atau membangun kebiasaan digital yang lebih sehat, Tawazn menyediakan alat dan motivasi yang Anda butuhkan untuk merebut kembali waktu Anda dan hidup dengan niat.",
     "cards": [
       {
         "icon": "🚫",

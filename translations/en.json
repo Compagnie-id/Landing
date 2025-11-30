@@ -212,5 +212,17 @@
       "emoji": "🎉",
       "title": "You're on the list!"
     }
+  },
+  "redirect": {
+    "title": "Tawazn - Digital Balance App",
+    "heading": "Redirecting to Tawazn...",
+    "subtitle": "Taking you to the main landing page.",
+    "message": "If you're not redirected automatically,",
+    "linkText": "click here"
+  },
+  "languages": {
+    "en": { "short": "EN" },
+    "id": { "short": "ID" },
+    "ar": { "short": "AR" }
   }
 }

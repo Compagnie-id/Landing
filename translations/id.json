@@ -49,7 +49,7 @@
       "emailPlaceholder": "Email tujuan pengiriman",
       "resolutionLabel": "Resolusi 2026",
       "resolutionPlaceholder": "Tulis resolusi, harapan, mimpi, atau surat untuk diri di masa depan...",
-      "helper": "💡 Lebih pesifik! 💡 Detail hari ini bisa jadi pengingat berharga di masa depan",
+      "helper": "💡 Lebih spesifik! 💡 Detail hari ini bisa jadi pengingat berharga di masa depan",
       "prompts": {
         "lessPhone": "📱 Kurangi main ponsel",
         "achievement": "🎯 Pencapaian",
@@ -212,5 +212,17 @@
       "emoji": "🎉",
       "title": "Anda ada di daftar!"
     }
+  },
+  "redirect": {
+    "title": "Tawazn - Aplikasi Keseimbangan Digital",
+    "heading": "Mengalihkan ke Tawazn...",
+    "subtitle": "Mengarahkan Anda ke halaman landing utama.",
+    "message": "Jika Anda tidak dialihkan secara otomatis,",
+    "linkText": "klik di sini"
+  },
+  "languages": {
+    "en": { "short": "EN" },
+    "id": { "short": "ID" },
+    "ar": { "short": "AR" }
   }
 }

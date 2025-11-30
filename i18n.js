@@ -38,8 +38,8 @@ class I18n {
         if (primaryLang === 'id') return 'id';
         if (primaryLang === 'ar') return 'ar';
 
-        // Default to English
-        return 'en';
+        // Default to Indonesian
+        return 'id';
     }
 
     async init() {
@@ -522,12 +522,7 @@ class I18n {
     }
 
     getLanguageName(lang) {
-        const names = {
-            'en': 'EN',
-            'id': 'ID',
-            'ar': 'AR'
-        };
-        return names[lang] || lang.toUpperCase();
+        return this.t(`languages.${lang}.short`) || lang.toUpperCase();
     }
 
     setupRTL() {

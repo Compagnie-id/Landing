@@ -1733,35 +1733,8 @@
             });
         });
 
-        // Time Capsule Form
-        document.getElementById('capsuleForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const resolution = document.getElementById('resolution').value;
-
-            // In production, send to backend
-            console.log('Time Capsule:', { name, email, resolution });
-
-            document.getElementById('successModal').classList.add('active');
-            this.reset();
-        });
-
-        // Waitlist Form
-        document.getElementById('waitlistForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = this.querySelector('input').value;
-            
-            this.innerHTML = `
-                <div style="text-align: center; padding: 1rem; color: var(--neu-yellow);">
-                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎉</div>
-                    <p style="font-weight: 700;">You're on the list!</p>
-                </div>
-            `;
-            
-            console.log('Waitlist:', email);
-        });
+        // Form handling is now managed by form-handler.js
+        // This code has been moved to js/form-handler.js for better organization
 
         // Modal
         function closeModal() {
@@ -1809,6 +1782,12 @@
             });
         }
     </script>
+
+    <!-- Configuration Script -->
+    <script src="js/config.js"></script>
+
+    <!-- Form Handler Script -->
+    <script src="js/form-handler.js"></script>
 
     <!-- i18n Script -->
     <script src="i18n.js"></script>

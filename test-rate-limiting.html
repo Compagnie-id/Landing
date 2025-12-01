@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rate Limiting Test - Tawazn</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: #FEFEFF;
+            color: #1F2937;
+            line-height: 1.6;
+        }
+
+        .test-section {
+            background: #FFFFFF;
+            border: 3px solid #1A1A2E;
+            box-shadow: 4px 4px 0px #1A1A2E;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .test-title {
+            font-size: 1.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: #1A1A2E;
+        }
+
+        .test-form {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .test-input {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: 3px solid #1A1A2E;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .test-button {
+            padding: 0.75rem 1.5rem;
+            background: #818CF8;
+            color: white;
+            border: 3px solid #1A1A2E;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.1s ease;
+        }
+
+        .test-button:hover:not(:disabled) {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px #1A1A2E;
+        }
+
+        .test-button:disabled {
+            background: #9CA3AF;
+            cursor: not-allowed;
+        }
+
+        .test-output {
+            background: #E0F7FA;
+            border: 2px dashed #1A1A2E;
+            padding: 1rem;
+            font-family: monospace;
+            font-size: 0.9rem;
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .rate-limit-display {
+            background: #FEF3CD;
+            border: 2px solid #1A1A2E;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .control-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .reset-button {
+            padding: 0.5rem 1rem;
+            background: #10B981;
+            color: white;
+            border: 2px solid #1A1A2E;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .reset-button:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 4px 4px 0px #1A1A2E;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 Rate Limiting Test - Tawazn Forms</h1>
+
+    <div class="rate-limit-display" id="rateLimitDisplay">
+        Loading rate limit status...
+    </div>
+
+    <div class="test-section">
+        <h2 class="test-title">📝 Test Form Submission</h2>
+        <div class="test-form">
+            <input type="text" id="testInput" class="test-input" placeholder="Enter test message..." value="Test submission">
+            <button onclick="testSubmission()" class="test-button" id="testButton">Submit Form</button>
+        </div>
+
+        <div class="control-buttons">
+            <button onclick="resetRateLimit()" class="reset-button">🔄 Reset Rate Limit</button>
+            <button onclick="clearOutput()" class="reset-button">🗑️ Clear Output</button>
+            <button onclick="runQuickTest()" class="reset-button">⚡ Quick Test (3 submissions)</button>
+        </div>
+
+        <div class="test-output" id="testOutput"></div>
+    </div>
+
+    <div class="test-section">
+        <h2 class="test-title">📊 Rate Limit Information</h2>
+        <div id="rateLimitInfo">
+            <p><strong>Configuration:</strong></p>
+            <ul>
+                <li>Max attempts per hour: <span id="maxAttempts">-</span></li>
+                <li>Time window: <span id="timeWindow">-</span></li>
+                <li>Current attempts: <span id="currentAttempts">-</span></li>
+                <li>Remaining attempts: <span id="remainingAttempts">-</span></li>
+                <li>Next reset: <span id="nextReset">-</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Include form handler -->
+    <script>
+        // Mock CONFIG for testing
+        window.APP_CONFIG = {
+            RATE_LIMIT: {
+                MAX_ATTEMPTS_PER_HOUR: 3,
+                ATTEMPT_WINDOW_HOURS: 1,
+                STORAGE_KEY: 'tawazn_form_attempts',
+                BLOCK_MESSAGE: 'Too many attempts. Please try again in an hour.'
+            },
+            GOOGLE_SCRIPT_URL: null // Disabled for testing
+        };
+    </script>
+    <script src="js/form-handler.js"></script>
+
+    <script>
+        let testOutput = [];
+
+        function log(message, type = 'info') {
+            const timestamp = new Date().toLocaleTimeString();
+            const prefix = {
+                'info': 'ℹ️',
+                'success': '✅',
+                'error': '❌',
+                'warning': '⚠️',
+                'submit': '📤'
+            }[type] || 'ℹ️';
+
+            testOutput.push(`[${timestamp}] ${prefix} ${message}`);
+            updateOutput();
+        }
+
+        function updateOutput() {
+            const outputDiv = document.getElementById('testOutput');
+            outputDiv.textContent = testOutput.slice(-20).join('\n'); // Show last 20 messages
+            outputDiv.scrollTop = outputDiv.scrollHeight;
+        }
+
+        function updateRateLimitDisplay() {
+            const handler = window.formHandler;
+            if (!handler) return;
+
+            // Get rate limit info
+            const attempts = handler.getSubmissionAttempts();
+            const maxAttempts = window.APP_CONFIG.RATE_LIMIT.MAX_ATTEMPTS_PER_HOUR;
+            const windowHours = window.APP_CONFIG.RATE_LIMIT.ATTEMPT_WINDOW_HOURS;
+            const now = Date.now();
+            const windowStart = now - (windowHours * 60 * 60 * 1000);
+
+            // Filter attempts within time window
+            const recentAttempts = attempts.filter(timestamp => timestamp > windowStart);
+            const remaining = Math.max(0, maxAttempts - recentAttempts.length);
+            const canSubmit = remaining > 0;
+
+            // Update main display
+            const displayDiv = document.getElementById('rateLimitDisplay');
+            displayDiv.innerHTML = `
+                <strong>📊 Rate Limit Status:</strong> ${recentAttempts.length}/${maxAttempts} submissions used<br>
+                <strong>📝 Remaining:</strong> ${remaining} attempts<br>
+                <strong>✅ Can Submit:</strong> ${canSubmit ? 'Yes' : 'No - Rate limited'}
+            `;
+
+            // Update detailed info
+            document.getElementById('maxAttempts').textContent = maxAttempts;
+            document.getElementById('timeWindow').textContent = `${windowHours} hour(s)`;
+            document.getElementById('currentAttempts').textContent = recentAttempts.length;
+            document.getElementById('remainingAttempts').textContent = remaining;
+
+            // Update button state
+            const testButton = document.getElementById('testButton');
+            testButton.disabled = !canSubmit;
+            testButton.textContent = canSubmit ? 'Submit Form' : '⏱️ Rate Limited';
+
+            // Update next reset time
+            const nextReset = handler.getNextResetTime();
+            if (nextReset) {
+                const resetDate = new Date(nextReset);
+                document.getElementById('nextReset').textContent = resetDate.toLocaleString();
+            } else {
+                document.getElementById('nextReset').textContent = 'No active submissions';
+            }
+        }
+
+        function testSubmission() {
+            const handler = window.formHandler;
+            const input = document.getElementById('testInput');
+
+            if (!handler) {
+                log('Form handler not loaded', 'error');
+                return;
+            }
+
+            // Check rate limit
+            if (!handler.canSubmit()) {
+                log('Rate limit exceeded!', 'error');
+                handler.showRateLimitError();
+                updateRateLimitDisplay();
+                return;
+            }
+
+            log('Simulating form submission...', 'submit');
+
+            // Simulate successful submission
+            setTimeout(() => {
+                handler.recordSubmission();
+                log('Submission recorded successfully', 'success');
+                updateRateLimitDisplay();
+            }, 500);
+        }
+
+        function resetRateLimit() {
+            const handler = window.formHandler;
+            if (handler) {
+                handler.resetRateLimit();
+                log('Rate limit reset', 'success');
+                updateRateLimitDisplay();
+            }
+        }
+
+        function clearOutput() {
+            testOutput = [];
+            updateOutput();
+            log('Output cleared', 'info');
+        }
+
+        function runQuickTest() {
+            log('Starting quick test (3 submissions)...', 'info');
+
+            let count = 0;
+            const maxCount = 3;
+
+            function submitOne() {
+                if (count >= maxCount) {
+                    log('Quick test completed!', 'success');
+                    return;
+                }
+
+                count++;
+                log(`Submission ${count} of ${maxCount}`, 'submit');
+
+                const handler = window.formHandler;
+                if (handler && handler.canSubmit()) {
+                    handler.recordSubmission();
+                    log(`Submission ${count} recorded`, 'success');
+                } else {
+                    log(`Submission ${count} blocked by rate limit`, 'error');
+                    updateRateLimitDisplay();
+                    return;
+                }
+
+                updateRateLimitDisplay();
+
+                // Wait 1 second between submissions
+                setTimeout(submitOne, 1000);
+            }
+
+            submitOne();
+        }
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            log('Rate limiting test page loaded', 'info');
+
+            // Wait for form handler to initialize
+            setTimeout(() => {
+                updateRateLimitDisplay();
+                log('Form handler initialized', 'success');
+
+                // Update display every 5 seconds
+                setInterval(updateRateLimitDisplay, 5000);
+            }, 500);
+        });
+
+        // Log any form handler errors
+        window.addEventListener('error', (event) => {
+            if (event.filename && event.filename.includes('form-handler.js')) {
+                log(`Form Handler Error: ${event.message}`, 'error');
+            }
+        });
+    </script>
+</body>
+</html>

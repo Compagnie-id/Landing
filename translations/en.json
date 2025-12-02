@@ -202,6 +202,15 @@
     "deliveryLabel": "See you on:",
     "deliveryDate": "January 1st, 2027"
   },
+  "errorModal": {
+    "title": "Submission Failed",
+    "tryAgain": "Try Again",
+    "networkError": "Network error. Please check your connection and try again.",
+    "validationError": "Please fill in all required fields correctly.",
+    "rateLimitError": "Too many submission attempts. Please try again later.",
+    "serverError": "Server error. Please try again in a few moments.",
+    "unknownError": "Something went wrong. Please try again."
+  },
   "meta": {
     "title": "Tawazn - Find Your Digital Balance | 2026 Resolution",
     "description": "Reclaim your time. Protect your focus. Live with balance. Write your 2026 resolution and get it back in a year.",

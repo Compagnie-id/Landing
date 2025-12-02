@@ -1700,13 +1700,30 @@
         <div class="modal">
             <button class="modal-close" onclick="closeModal()">×</button>
             <div class="modal-icon">💊✨</div>
-            <h3 class="modal-title">Capsule Sealed!</h3>
-            <p class="modal-message">
+            <h3 class="modal-title" data-i18n="modal.title">Capsule Sealed!</h3>
+            <p class="modal-message" data-i18n="modal.message">
                 Your resolution is safely stored. We'll send it back with your Tawazn journey summary.
             </p>
             <div class="modal-date">
-                See you on:
-                <strong>January 1st, 2027</strong>
+                <span data-i18n="modal.deliveryLabel">See you on:</span>
+                <strong data-i18n="modal.deliveryDate">January 1st, 2027</strong>
+            </div>
+        </div>
+    </div>
+
+    <!-- Error Modal -->
+    <div class="modal-overlay" id="errorModal">
+        <div class="modal" style="background: var(--neu-red);">
+            <button class="modal-close" onclick="closeErrorModal()">×</button>
+            <div class="modal-icon">❌</div>
+            <h3 class="modal-title" data-i18n="errorModal.title">Submission Failed</h3>
+            <p class="modal-message" id="errorMessage" data-i18n="errorModal.unknownError">
+                Something went wrong. Please try again.
+            </p>
+            <div style="margin-top: 1.5rem;">
+                <button class="btn btn-secondary" onclick="closeErrorModal()" style="background: white; color: var(--neu-black);" data-i18n="errorModal.tryAgain">
+                    Try Again
+                </button>
             </div>
         </div>
     </div>
@@ -1741,8 +1758,16 @@
             document.getElementById('successModal').classList.remove('active');
         }
 
+        function closeErrorModal() {
+            document.getElementById('errorModal').classList.remove('active');
+        }
+
         document.getElementById('successModal').addEventListener('click', function(e) {
             if (e.target === this) closeModal();
+        });
+
+        document.getElementById('errorModal').addEventListener('click', function(e) {
+            if (e.target === this) closeErrorModal();
         });
 
         // Smooth scroll
@@ -1757,7 +1782,10 @@
         });
 
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') closeModal();
+            if (e.key === 'Escape') {
+                closeModal();
+                closeErrorModal();
+            }
         });
 
         // Auto-expanding textarea

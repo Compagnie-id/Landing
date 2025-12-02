@@ -202,6 +202,15 @@
     "deliveryLabel": "Sampai jumpa pada:",
     "deliveryDate": "1 Januari 2027"
   },
+  "errorModal": {
+    "title": "Pengiriman Gagal",
+    "tryAgain": "Coba Lagi",
+    "networkError": "Kesalahan jaringan. Silakan periksa koneksi Anda dan coba lagi.",
+    "validationError": "Silakan isi semua field yang diperlukan dengan benar.",
+    "rateLimitError": "Terlalu banyak percobaan pengiriman. Silakan coba lagi nanti.",
+    "serverError": "Kesalahan server. Silakan coba lagi beberapa saat.",
+    "unknownError": "Terjadi kesalahan. Silakan coba lagi."
+  },
   "meta": {
     "title": "Tawazn - Temukan Keseimbangan Digital Anda | Resolusi 2026",
     "description": "Rebut kembali waktu Anda. Lindungi fokus Anda. Hidup dengan keseimbangan. Tulis resolusi 2026 Anda dan dapatkan kembali setahun kemudian.",

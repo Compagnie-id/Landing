@@ -68,12 +68,23 @@ class FormHandler {
                 this.showSuccess(formData);
                 this.form.reset();
             } else {
-                throw new Error(response.error || 'Failed to submit form. Please try again.');
+                // Use the error type from the response if available
+                const errorType = response.errorType || 'serverError';
+                this.showError(response.error || 'Failed to submit form. Please try again.', errorType);
             }
 
         } catch (error) {
             console.error('Form submission error:', error);
-            this.showError(error.message);
+
+            // Determine error type for catch block
+            let errorType = 'unknownError';
+            if (error.message && error.message.includes('fetch')) {
+                errorType = 'networkError';
+            } else if (error.message && error.message.includes('NetworkError')) {
+                errorType = 'networkError';
+            }
+
+            this.showError(error.message || 'An unexpected error occurred.', errorType);
         } finally {
             // Reset button state
             this.setLoading(submitButton, originalText);
@@ -119,12 +130,23 @@ class FormHandler {
 
                 this.showWaitlistSuccess(this.waitlistForm);
             } else {
-                throw new Error(response.error || 'Failed to join waitlist. Please try again.');
+                // Use the error type from the response if available
+                const errorType = response.errorType || 'serverError';
+                this.showError(response.error || 'Failed to join waitlist. Please try again.', errorType);
             }
 
         } catch (error) {
             console.error('Waitlist submission error:', error);
-            this.showError(error.message);
+
+            // Determine error type for catch block
+            let errorType = 'unknownError';
+            if (error.message && error.message.includes('fetch')) {
+                errorType = 'networkError';
+            } else if (error.message && error.message.includes('NetworkError')) {
+                errorType = 'networkError';
+            }
+
+            this.showError(error.message || 'An unexpected error occurred.', errorType);
             this.setLoading(submitButton, originalText);
         }
     }
@@ -160,17 +182,17 @@ class FormHandler {
 
     validateFormData(data) {
         if (!data.name || data.name.length < 2) {
-            this.showError('Please enter your name (at least 2 characters).');
+            this.showError('Please enter your name (at least 2 characters).', 'validationError');
             return false;
         }
 
         if (!this.validateEmail(data.email)) {
-            this.showError('Please enter a valid email address.');
+            this.showError('Please enter a valid email address.', 'validationError');
             return false;
         }
 
         if (!data.resolution || data.resolution.length < 10) {
-            this.showError('Please write a more detailed resolution (at least 10 characters).');
+            this.showError('Please write a more detailed resolution (at least 10 characters).', 'validationError');
             return false;
         }
 
@@ -180,6 +202,66 @@ class FormHandler {
     validateEmail(email) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
+    }
+
+    async submitToGoogleScript(data) {
+        if (!this.config?.GOOGLE_SCRIPT_URL) {
+            console.warn('Google Script URL not configured. Using fallback mode.');
+           return { success: true, message: 'Data logged (development mode)' };
+        }
+
+        try {
+            const response = await fetch(this.config.GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors', // Google Apps Script requires no-cors mode
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            });
+
+            // With no-cors mode, we can't read the response directly
+            // We assume success if no error is thrown
+            return { success: true, message: 'Form submitted successfully' };
+
+        } catch (error) {
+            console.error('Google Script submission error:', error);
+
+            // Determine error type based on error message
+            let errorType = 'serverError';
+            if (error.message && error.message.includes('fetch')) {
+                errorType = 'networkError';
+            } else if (error.message && error.message.includes('Failed to fetch')) {
+                errorType = 'networkError';
+            } else if (error.message && error.message.includes('NetworkError')) {
+                errorType = 'networkError';
+            }
+
+            return {
+                success: false,
+                error: this.getErrorMessage(errorType),
+                errorType: errorType
+            };
+        }
+    }
+
+    getErrorMessage(errorType) {
+        const i18n = window.i18n;
+
+        if (i18n && i18n.t) {
+            return i18n.t(`errorModal.${errorType}`) || i18n.t('errorModal.unknownError');
+        }
+
+        // Fallback English messages
+        const fallbackMessages = {
+            networkError: 'Network error. Please check your connection and try again.',
+            validationError: 'Please fill in all required fields correctly.',
+            rateLimitError: 'Too many submission attempts. Please try again later.',
+            serverError: 'Server error. Please try again in a few moments.',
+            unknownError: 'Something went wrong. Please try again.'
+        };
+
+        return fallbackMessages[errorType] || fallbackMessages.unknownError;
     }
 
     setLoading(button, text) {
@@ -315,7 +397,7 @@ class FormHandler {
      */
     showRateLimitError() {
         const message = this.config?.RATE_LIMIT?.BLOCK_MESSAGE || 'Too many submission attempts. Please try again later.';
-        this.showError(message);
+        this.showError(message, 'rateLimitError');
 
         // Update form button to show rate limit status
         if (this.form) {
@@ -522,7 +604,47 @@ class FormHandler {
         return oldestAttempt + (windowHours * 60 * 60 * 1000);
     }
 
-    showError(message) {
+    showError(message, errorType = 'unknownError') {
+        // Check if i18n is available
+        const i18n = window.i18n;
+
+        // Get translated error message if i18n is available
+        let errorMessage = message;
+        if (i18n && i18n.t) {
+            errorMessage = i18n.t(`errorModal.${errorType}`) || message;
+        }
+
+        // Update error modal content
+        const errorModal = document.getElementById('errorModal');
+        const errorMessageElement = document.getElementById('errorMessage');
+
+        if (errorModal && errorMessageElement) {
+            errorMessageElement.textContent = errorMessage;
+
+            // Update modal title if i18n is available
+            const modalTitle = errorModal.querySelector('.modal-title');
+            if (modalTitle && i18n && i18n.t) {
+                modalTitle.textContent = i18n.t('errorModal.title');
+            }
+
+            // Update button text if i18n is available
+            const modalButton = errorModal.querySelector('.btn');
+            if (modalButton && i18n && i18n.t) {
+                modalButton.textContent = i18n.t('errorModal.tryAgain');
+            }
+
+            // Show error modal
+            errorModal.classList.add('active');
+        } else {
+            // Fallback to console error if modal is not available
+            console.error('❌ Form Error:', errorMessage);
+
+            // Create inline error as fallback
+            this.createInlineError(errorMessage);
+        }
+    }
+
+    createInlineError(message) {
         // Create or update error message
         let errorDiv = document.querySelector('.form-error');
 
@@ -554,9 +676,6 @@ class FormHandler {
                 errorDiv.style.display = 'none';
             }
         }, 5000);
-
-        // Also log to console
-        console.error('❌ Form Error:', message);
     }
 }
 

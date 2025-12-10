@@ -117,7 +117,8 @@ class I18n {
         this.updateTimeCapsule();
         this.updateFeatures();
         this.updateImpact();
-        this.updatePricing();
+        this.updateRoadmap();
+        this.updateRoadmapPhases();
         this.updateCTA();
         this.updateFooter();
         this.updateModal();
@@ -289,6 +290,7 @@ class I18n {
         this.updateText('.impact-stat-label', 'impact.statLabel');
         this.updateText('.impact-stat-number', 'impact.statNumber');
         this.updateText('.impact-stat-desc', 'impact.statDesc');
+        this.updateText('.impact-disclaimer', 'impact.statDisclaimer');
     }
 
     updateImpactCauses() {

@@ -113,12 +113,13 @@
   },
   "impact": {
     "tag": "Our Impact",
-    "title": "Every Subscription Gives Back",
-    "paragraph1": "We believe in business that does good. 50% of revenue goes directly to humanitarian causes. When you choose Tawazn, you're helping others too.",
-    "paragraph2": "In Islamic tradition, <strong>Sadaqah Jariyah</strong> is charity that keeps giving. Your subscription becomes ongoing charity.",
+    "title": "A Side Project with Purpose",
+    "paragraph1": "This started as a personal project to help balance work and family life. 50% of all revenue goes directly to humanitarian causes - not because it's good business, but because it's the right thing to do.",
+    "paragraph2": "As a Muslim professional, I struggled with screen time distractions affecting prayer, work, and family. This app helped me reclaim that balance, and I hope it helps you too.",
     "statLabel": "Revenue to Charity",
     "statNumber": "50%",
-    "statDesc": "Transparent • Verified Partners • Real Impact",
+    "statDisclaimer": "*After taxes and platform fees",
+    "statDesc": "Personal Project • Transparent Giving • Real Impact",
     "causes": {
       "education": "🎓 Education",
       "water": "💧 Clean Water",
@@ -126,51 +127,87 @@
       "health": "🏥 Healthcare"
     }
   },
-  "pricing": {
-    "tag": "Pricing",
-    "title": "Fair for Everyone",
-    "subtitle": "Prices adjust based on your country's purchasing power",
-    "cards": [
-      {
-        "name": "Free",
-        "price": "$0",
-        "period": "/ forever",
-        "features": [
-          "Basic tracking",
-          "3 app limits",
-          "Prayer reminders",
-          "Daily insights"
-        ],
-        "button": "Get Started"
-      },
-      {
-        "name": "Premium",
-        "price": "$4.99",
-        "period": "/ month",
-        "badge": "Most Popular",
-        "features": [
-          "Everything Free",
-          "Unlimited blocking",
-          "Advanced analytics",
-          "Ramadan mode",
-          "Accountability"
-        ],
-        "button": "Join Waitlist"
-      },
-      {
-        "name": "Blessed",
-        "price": "$9.99",
-        "period": "/ month",
-        "features": [
-          "Everything Premium",
-          "Family (5 devices)",
-          "Double charity",
-          "Charity dashboard",
-          "Early access"
-        ],
-        "button": "Join Waitlist"
-      }
-    ]
+  "roadmap": {
+    "tag": "Our Journey",
+    "title": "Launching with Purpose",
+    "subtitle": "Two strategic launch windows for maximum impact",
+    "newYear": {
+      "title": "New Year 2026 Launch",
+      "date": "December 27-31, 2025",
+      "theme": "Start 2026 with Balance",
+      "phase": "Phase 2",
+      "features": [
+        "Islamic quotes on blocked apps",
+        "Prayer time integration",
+        "Basic usage goals & tracking",
+        "Share progress feature"
+      ]
+    },
+    "ramadan": {
+      "title": "Ramadan 2026 Launch",
+      "date": "Late February - March 2026",
+      "theme": "Protect Your Ibadah Time",
+      "phase": "Phase 4",
+      "features": [
+        "Ramadan mode (prayer-aware schedules)",
+        "Quran time as positive tracking",
+        "Daily reflection prompts",
+        "Streak & consistency tracking"
+      ]
+    },
+    "comingSoon": {
+      "title": "What's Next",
+      "subtitle": "Community-driven features",
+      "features": [
+        "Accountability partner system",
+        "Weekly email reports",
+        "Home screen widget",
+        "Focus sessions with Barakah timer",
+        "Community challenges & leaderboards",
+        "Success stories & testimonials"
+      ]
+    }
+  },
+  "roadmap": {
+    "tag": "Our Journey",
+    "title": "Launching with Purpose",
+    "subtitle": "Two strategic launch windows for maximum impact",
+    "newYear": {
+      "title": "New Year 2026 Launch",
+      "date": "December 27-31, 2025",
+      "theme": "Start 2026 with Balance",
+      "phase": "Phase 2",
+      "features": [
+        "Islamic quotes on blocked apps",
+        "Prayer time integration",
+        "Basic usage goals & tracking",
+        "Share progress feature"
+      ]
+    },
+    "ramadan": {
+      "title": "Ramadan 2026 Launch",
+      "date": "Late February - March 2026",
+      "theme": "Protect Your Ibadah Time",
+      "phase": "Phase 4",
+      "features": [
+        "Ramadan mode (prayer-aware schedules)",
+        "Quran time as positive tracking",
+        "Daily reflection prompts",
+        "Streak & consistency tracking"
+      ]
+    },
+    "comingSoon": {
+      "title": "What's Next",
+      "subtitle": "Community-driven features",
+      "features": [
+        "Accountability partner system",
+        "Weekly email reports",
+        "Home screen widget",
+        "Focus sessions with Barakah timer",
+        "Community challenges & leaderboards",
+        "Success stories & testimonials"
+      ]
+    }
   },
   "cta": {
     "title": "Start 2026 with Balance",

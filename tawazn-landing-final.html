@@ -885,6 +885,17 @@
             color: var(--text-secondary-light);
         }
 
+        .impact-disclaimer {
+            position: absolute;
+            bottom: 0.5rem;
+            right: 0.5rem;
+            font-size: 0.65rem;
+            color: var(--text-secondary);
+            opacity: 0.8;
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
         .impact-causes {
             display: flex;
             gap: 0.75rem;
@@ -1002,6 +1013,136 @@
 
         .pricing-check {
             font-size: 1.1rem;
+        }
+
+        /* === ROADMAP SECTION === */
+        .roadmap {
+            padding: 4rem 2rem;
+            background: var(--neu-green);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .roadmap-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .roadmap-item {
+            background: var(--surface-light);
+            border: var(--border);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            position: relative;
+            transition: all 0.2s ease;
+            overflow: hidden;
+        }
+
+        .roadmap-item:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .roadmap-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: var(--border);
+        }
+
+        .roadmap-phase {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border: var(--border);
+            font-weight: 700;
+            font-size: 0.75rem;
+            min-width: 100px;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .phase-emoji {
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        .roadmap-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .roadmap-title {
+            font-size: 1.25rem;
+            font-weight: 900;
+            color: var(--neu-black);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+        }
+
+        .roadmap-date {
+            display: inline-block;
+            background: var(--neu-yellow);
+            color: var(--neu-black);
+            padding: 0.25rem 0.75rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            min-width: 120px;
+        }
+
+        .roadmap-theme {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .roadmap-features {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.75rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            background: var(--surface-light);
+            border: var(--border);
+            transition: all 0.2s ease;
+        }
+
+        .feature-item:hover {
+            background: var(--neu-yellow);
+            transform: translateX(2px);
+        }
+
+        .feature-check {
+            color: var(--primary);
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+
+        .feature-text {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            line-height: 1.2;
         }
 
         /* === CTA SECTION === */
@@ -1272,6 +1413,89 @@
             .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
             .sticker { display: none; }
             .features-grid { grid-template-columns: 1fr; }
+
+            /* Roadmap mobile adjustments */
+            .roadmap { padding: 4rem 1rem; }
+            .roadmap-timeline { gap: 1.5rem; }
+            .roadmap-card {
+                padding: 1.5rem;
+                height: auto;
+                min-height: 280px;
+            }
+            .roadmap-icon {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 1rem;
+                padding-bottom: 1rem;
+            }
+            .phase-badge {
+                padding: 0.4rem 0.6rem;
+                font-size: 0.65rem;
+            }
+            .phase-emoji {
+                font-size: 1.5rem;
+                margin: 0;
+            }
+            .roadmap-info { flex: 1; }
+            .roadmap-title { font-size: 1.25rem; }
+            .roadmap-date {
+                display: block;
+                margin-bottom: 0.75rem;
+                padding: 0.3rem 0.5rem;
+                font-size: 0.7rem;
+            }
+            .roadmap-theme {
+                font-size: 0.9rem;
+                margin-bottom: 1rem;
+            }
+            .roadmap-features { gap: 0.5rem; }
+            .feature-item {
+                padding: 0.5rem;
+                flex-direction: column;
+                align-items: flex-start;
+                min-height: auto;
+            }
+            .feature-check {
+                font-size: 0.9rem;
+                margin-bottom: 0.25rem;
+            }
+            .feature-text {
+                font-size: 0.8rem;
+                line-height: 1.2;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .roadmap { padding: 3rem 0.75rem; }
+            .roadmap-timeline { gap: 1rem; }
+            .roadmap-card {
+                padding: 1rem;
+                min-height: 240px;
+            }
+            .roadmap-icon {
+                flex-direction: column;
+                margin-bottom: 0.75rem;
+            }
+            .phase-badge {
+                padding: 0.3rem 0.5rem;
+                font-size: 0.6rem;
+            }
+            .phase-emoji { font-size: 1.25rem; }
+            .roadmap-title { font-size: 1.1rem; }
+            .roadmap-date {
+                padding: 0.25rem 0.4rem;
+                font-size: 0.65rem;
+                margin-bottom: 0.5rem;
+            }
+            .roadmap-theme { font-size: 0.85rem; }
+            .feature-item {
+                padding: 0.4rem;
+                min-height: auto;
+            }
+            .feature-check { font-size: 0.8rem; }
+            .feature-text { font-size: 0.75rem; }
+        
 
             /* Phone mockup mobile fixes */
             .phone-container {
@@ -1551,87 +1775,124 @@
     <section class="impact" id="impact">
         <div class="impact-grid">
             <div class="impact-content animate">
-                <div class="section-tag">Our Impact</div>
-                <h2>Every Subscription Gives Back</h2>
-                <p>
-                    We believe in business that does good. 50% of revenue goes directly to humanitarian causes. 
+                <div class="section-tag" data-i18n="impact.tag">Our Impact</div>
+                <h2 data-i18n="impact.title">Every Subscription Gives Back</h2>
+                <p data-i18n="impact.paragraph1">
+                    We believe in business that does good. 50% of revenue goes directly to humanitarian causes.
                     When you choose Tawazn, you're helping others too.
                 </p>
-                <p>
+                <p data-i18n="impact.paragraph2">
                     In Islamic tradition, <strong>Sadaqah Jariyah</strong> is charity that keeps giving. Your subscription becomes ongoing charity.
                 </p>
                 <div class="impact-causes">
-                    <div class="cause-tag">🎓 Education</div>
-                    <div class="cause-tag">💧 Clean Water</div>
-                    <div class="cause-tag">🍞 Food Security</div>
-                    <div class="cause-tag">🏥 Healthcare</div>
+                    <div class="cause-tag" data-i18n="impact.causes.education">🎓 Education</div>
+                    <div class="cause-tag" data-i18n="impact.causes.water">💧 Clean Water</div>
+                    <div class="cause-tag" data-i18n="impact.causes.food">🍞 Food Security</div>
+                    <div class="cause-tag" data-i18n="impact.causes.health">🏥 Healthcare</div>
                 </div>
             </div>
             <div class="impact-stat-box animate">
-                <div class="impact-stat-number">50%</div>
-                <div class="impact-stat-label">Revenue to Charity</div>
-                <p class="impact-stat-desc">Transparent • Verified Partners • Real Impact</p>
+                <div class="impact-stat-number" data-i18n="impact.statNumber">50%</div>
+                <div class="impact-stat-label" data-i18n="impact.statLabel">Revenue to Charity</div>
+                <p class="impact-stat-desc" data-i18n="impact.statDesc">Transparent • Verified Partners • Real Impact</p>
+                <div class="impact-disclaimer" data-i18n="impact.statDisclaimer">*After taxes and platform fees</div>
             </div>
         </div>
     </section>
 
-    <!-- Pricing Section -->
-    <section class="pricing" id="pricing">
+    <!-- Roadmap Section -->
+    <section class="roadmap" id="roadmap">
         <div class="section-header animate">
-            <div class="section-tag">Pricing</div>
-            <h2 class="section-title">Fair for Everyone</h2>
-            <p class="section-subtitle">
-                Prices adjust based on your country's purchasing power
+            <div class="section-tag" data-i18n="roadmap.tag">Our Journey</div>
+            <h2 class="section-title" data-i18n="roadmap.title">Launching with Purpose</h2>
+            <p class="section-subtitle" data-i18n="roadmap.subtitle">
+                Two strategic launch windows for maximum impact
             </p>
         </div>
-        <div class="pricing-grid">
-            <div class="pricing-card animate">
-                <h3 class="pricing-name">Free</h3>
-                <div class="pricing-price">
-                    <span class="pricing-amount">$0</span>
-                    <span class="pricing-period">/ forever</span>
+
+        <div class="roadmap-grid">
+            <!-- New Year Launch -->
+            <div class="roadmap-item animate">
+                <div class="roadmap-header">
+                    <span class="roadmap-phase" data-i18n="roadmap.newYear.phase">Phase 2</span>
+                    <span class="roadmap-emoji">🎯</span>
                 </div>
-                <ul class="pricing-features">
-                    <li><span class="pricing-check">✓</span> Basic tracking</li>
-                    <li><span class="pricing-check">✓</span> 3 app limits</li>
-                    <li><span class="pricing-check">✓</span> Prayer reminders</li>
-                    <li><span class="pricing-check">✓</span> Daily insights</li>
-                </ul>
-                <a href="#capsule" class="btn btn-secondary" style="width: 100%; justify-content: center;">Get Started</a>
+                <div class="roadmap-content">
+                    <h3 class="roadmap-title" data-i18n="roadmap.newYear.title">New Year 2026 Launch</h3>
+                    <div class="roadmap-date-container">
+                        <span class="roadmap-date" data-i18n="roadmap.newYear.date">December 27-31, 2025</span>
+                    </div>
+                    <p class="roadmap-theme" data-i18n="roadmap.newYear.theme">Start 2026 with Balance</p>
+                    <div class="roadmap-features">
+                        <div class="feature-badge" data-i18n="roadmap.newYear.features.0">Islamic quotes on blocked apps</div>
+                        <div class="feature-badge" data-i18n="roadmap.newYear.features.1">Prayer time integration</div>
+                        <div class="feature-badge" data-i18n="roadmap.newYear.features.2">Basic usage goals & tracking</div>
+                        <div class="feature-badge" data-i18n="roadmap.newYear.features.3">Share progress feature</div>
+                    </div>
+                </div>
             </div>
-            <div class="pricing-card featured animate">
-                <div class="pricing-badge">Most Popular</div>
-                <h3 class="pricing-name">Premium</h3>
-                <div class="pricing-price">
-                    <span class="pricing-amount">$4.99</span>
-                    <span class="pricing-period">/ month</span>
+
+            <!-- Ramadan Launch -->
+            <div class="roadmap-item animate">
+                <div class="roadmap-header">
+                    <span class="roadmap-phase" data-i18n="roadmap.ramadan.phase">Phase 4</span>
+                    <span class="roadmap-emoji">🌙</span>
                 </div>
-                <ul class="pricing-features">
-                    <li><span class="pricing-check">✓</span> Everything Free</li>
-                    <li><span class="pricing-check">✓</span> Unlimited blocking</li>
-                    <li><span class="pricing-check">✓</span> Advanced analytics</li>
-                    <li><span class="pricing-check">✓</span> Ramadan mode</li>
-                    <li><span class="pricing-check">✓</span> Accountability</li>
-                </ul>
-                <a href="#capsule" class="btn btn-primary" style="width: 100%; justify-content: center;">Join Waitlist</a>
+                <div class="roadmap-content">
+                    <h3 class="roadmap-title" data-i18n="roadmap.ramadan.title">Ramadan 2026 Launch</h3>
+                    <div class="roadmap-date-container">
+                        <span class="roadmap-date" data-i18n="roadmap.ramadan.date">Late February - March 2026</span>
+                    </div>
+                    <p class="roadmap-theme" data-i18n="roadmap.ramadan.theme">Protect Your Ibadah Time</p>
+                    <div class="roadmap-features">
+                        <div class="feature-badge" data-i18n="roadmap.ramadan.features.0">Ramadan mode (prayer-aware schedules)</div>
+                        <div class="feature-badge" data-i18n="roadmap.ramadan.features.1">Quran time as positive tracking</div>
+                        <div class="feature-badge" data-i18n="roadmap.ramadan.features.2">Daily reflection prompts</div>
+                        <div class="feature-badge" data-i18n="roadmap.ramadan.features.3">Streak & consistency tracking</div>
+                    </div>
+                </div>
             </div>
-            <div class="pricing-card animate">
-                <h3 class="pricing-name">Blessed</h3>
-                <div class="pricing-price">
-                    <span class="pricing-amount">$9.99</span>
-                    <span class="pricing-period">/ month</span>
+
+            <!-- What's Next -->
+            <div class="roadmap-item animate">
+                <div class="roadmap-header">
+                    <span class="roadmap-phase">V2+</span>
+                    <span class="roadmap-emoji">🚀</span>
                 </div>
-                <ul class="pricing-features">
-                    <li><span class="pricing-check">✓</span> Everything Premium</li>
-                    <li><span class="pricing-check">✓</span> Family (5 devices)</li>
-                    <li><span class="pricing-check">✓</span> Double charity</li>
-                    <li><span class="pricing-check">✓</span> Charity dashboard</li>
-                    <li><span class="pricing-check">✓</span> Early access</li>
-                </ul>
-                <a href="#capsule" class="btn btn-secondary" style="width: 100%; justify-content: center;">Join Waitlist</a>
+                <div class="roadmap-content">
+                    <h3 class="roadmap-title" data-i18n="roadmap.comingSoon.title">What's Next</h3>
+                    <p class="roadmap-theme" data-i18n="roadmap.comingSoon.subtitle">Community-driven features</p>
+                    <div class="roadmap-features">
+                        <div class="feature-badge" data-i18n="roadmap.comingSoon.features.0">Accountability partner system</div>
+                        <div class="feature-badge" data-i18n="roadmap.comingSoon.features.1">Weekly email reports</div>
+                        <div class="feature-badge" data-i18n="roadmap.comingSoon.features.2">Home screen widget</div>
+                        <div class="feature-badge" data-i18n="roadmap.comingSoon.features.3">Focus sessions with Barakah timer</div>
+                        <div class="feature-badge" data-i18n="roadmap.comingSoon.features.4">Community challenges & leaderboards</div>
+                        <div class="feature-badge" data-i18n="roadmap.comingSoon.features.5">Success stories & testimonials</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- RTL Support -->
+    <style>
+        [dir="rtl"] .roadmap-timeline {
+            direction: rtl;
+        }
+
+        [dir="rtl"] .roadmap-card {
+            text-align: right;
+        }
+
+        [dir="rtl"] .roadmap-icon {
+            flex-direction: row-reverse;
+        }
+
+        [dir="rtl"] .feature-item {
+            text-align: right;
+        }
+    </style>
 
     <!-- CTA Section -->
     <section class="cta">

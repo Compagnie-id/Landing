@@ -74,10 +74,10 @@
     }
   },
   "features": {
-    "tag": "Fitur",
-    "title": "Semua yang Anda Butuhkan",
-    "subtitle": "Alat kuat untuk kebiasaan digital yang lebih sehat",
-    "intro": "Tawazn adalah pendamping kesehatan digital Anda yang dirancang untuk membantu Anda menemukan keseimbangan di dunia yang penuh dengan gangguan. Berakar pada prinsip-prinsip Islam, aplikasi kami secara cerdas mengelola waktu layar Anda sambil mendorong pertumbuhan spiritual dan koneksi yang bermakna. Apakah Anda ingin mengurangi penggunaan media sosial, fokus saat waktu sholat, atau membangun kebiasaan digital yang lebih sehat, Tawazn menyediakan alat dan motivasi yang Anda butuhkan untuk merebut kembali waktu Anda dan hidup dengan niat.",
+    "tag": "Apa itu Tawazn?",
+    "title": "Atur Layar, Atur Hidup",
+    "subtitle": "Menjaga waktumu agar lebih bermakna",
+    "intro": "Tawazn adalah aplikasi pengelolaan waktu layar (screen time) yang hadir untuk membantu kamu membangun kebiasaan digital yang lebih sehat. Menggabungkan teknologi dan nilai-nilai Islami, Tawazn membantu kamu mengurangi distraksi, menjaga fokus, dan mengarahkan penggunaan gadget ke hal yang lebih bermanfaat.",
     "cards": [
       {
         "icon": "🚫",
@@ -112,13 +112,14 @@
     ]
   },
   "impact": {
-    "tag": "Dampak Kami",
-    "title": "Setiap Langganan Memberi Kembali",
-    "paragraph1": "Kami percaya pada bisnis yang melakukan kebaikan. 50% pendapatan langsung kepada kemanusiaan. Ketika Anda memilih Tawazn, Anda membantu orang lain juga.",
-    "paragraph2": "Dalam tradisi Islam, <strong>Sadaqah Jariyah</strong> adalah amal yang terus memberi. Langganan Anda menjadi amal yang berkelanjutan.",
+    "tag": "Manifesto",
+    "title": "Dibangun dari Pencarian Keseimbangan",
+    "paragraph1": "Aplikasi ini lahir dari kegelisahan sederhana: bagaimana caranya tetap hadir untuk keluarga, menjaga ibadah, dan bekerja dengan fokus—di dunia yang terus menarik perhatian kita ke layar. Dari pencarian itu, saya berjanji bahwa 50% dari setiap rupiah yang masuk akan kembali kepada manusia lain. Bukan strategi. Bukan pemasaran. Hanya komitmen pada kebaikan.",
+    "paragraph2": "Sebagai seorang Muslim yang bergulat dengan distraksi digital, saya membuat alat yang membantu saya menata ulang hidup. Menemukan ruang hening di antara notifikasi. Mengembalikan waktu yang dulu hilang. Jika aplikasi ini bisa memberi Anda sedikit ketenangan yang sama, maka proyek kecil ini sudah mencapai tujuannya.",
     "statLabel": "Pendapatan untuk Amal",
     "statNumber": "50%",
-    "statDesc": "Transparan • Mitra Terverifikasi • Dampak Nyata",
+    "statDisclaimer": "*Setelah pajak dan biaya platform",
+    "statDesc": "Komitmen Jujur • Pemberian Terbuka • Dampak yang Terasa",
     "causes": {
       "education": "🎓 Pendidikan",
       "water": "💧 Air Bersih",
@@ -126,51 +127,46 @@
       "health": "🏥 Kesehatan"
     }
   },
-  "pricing": {
-    "tag": "Harga",
-    "title": "Adil untuk Semua",
-    "subtitle": "Harga disesuaikan berdasarkan daya beli negara Anda",
-    "cards": [
-      {
-        "name": "Gratis",
-        "price": "Rp 0",
-        "period": "/ selamanya",
-        "features": [
-          "Pelacakan dasar",
-          "Batas 3 aplikasi",
-          "Pengingat sholat",
-          "Wawasan harian"
-        ],
-        "button": "Mulai"
-      },
-      {
-        "name": "Premium",
-        "price": "Rp 79.000",
-        "period": "/ bulan",
-        "badge": "Paling Populer",
-        "features": [
-          "Semua Gratis",
-          "Pemblokiran tak terbatas",
-          "Analitik lanjutan",
-          "Mode Ramadan",
-          "Akuntabilitas"
-        ],
-        "button": "Gabung Waitlist"
-      },
-      {
-        "name": "Berkah",
-        "price": "Rp 159.000",
-        "period": "/ bulan",
-        "features": [
-          "Semua Premium",
-          "Keluarga (5 perangkat)",
-          "Amal ganda",
-          "Dashboard amal",
-          "Akses awal"
-        ],
-        "button": "Gabung Waitlist"
-      }
-    ]
+  "roadmap": {
+    "tag": "Perjalanan Kami",
+    "title": "Meluncur dengan Tujuan",
+    "subtitle": "Dua jendela peluncuran strategis untuk dampak maksimal",
+    "newYear": {
+      "title": "Peluncuran Tahun Baru 2026",
+      "date": "27-31 Desember 2025",
+      "theme": "Mulai 2026 dengan Keseimbangan",
+      "phase": "Fase 2",
+      "features": [
+        "Kutipan Islam saat aplikasi diblokir",
+        "Integrasi waktu sholat",
+        "Target & pelacakan penggunaan dasar",
+        "Fitur berbagi kemajuan"
+      ]
+    },
+    "ramadan": {
+      "title": "Peluncuran Ramadan 2026",
+      "date": "Akhir Februari - Maret 2026",
+      "theme": "Lindungi Waktu Ibadah Anda",
+      "phase": "Fase 4",
+      "features": [
+        "Mode Ramadan (jadwal sadar sholat)",
+        "Waktu Quran sebagai pelacakan positif",
+        "Prompts refleksi harian",
+        "Pelacakan streak & konsistensi"
+      ]
+    },
+    "comingSoon": {
+      "title": "Apa Selanjutnya",
+      "subtitle": "Fitur yang digerakkan oleh komunitas",
+      "features": [
+        "Sistem partner akuntabilitas",
+        "Laporan email mingguan",
+        "Widget layar utama",
+        "Sesi fokus dengan timer Barakah",
+        "Tantangan & leaderboard komunitas",
+        "Cerita sukses & testimonial"
+      ]
+    }
   },
   "cta": {
     "title": "Mulai 2026 dengan Keseimbangan",

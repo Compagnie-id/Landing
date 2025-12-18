@@ -9,7 +9,7 @@
     "badge": "Meluncur di Tahun Baru 2026!",
     "title": "Kendalikan Waktu,<br>Seimbangkan Hidup",
     "subtitle": "Waktumu terlalu berharga untuk terbuang! Kuatkan fokusmu dan kendalikan kembali hidupmu. Tulis resolusimu untuk 2026, kapsul waktu akan menyimpan dan mengembalikannya setahun kemudian.",
-    "writeResolutionBtn": "✍️ Tulis Resolusi",
+    "writeResolutionBtn": "✍️ Tulis Resolusi 2026",
     "seeFeaturesBtn": "Mengenal Tawazn →",
     "stickers": {
       "timeSaved": "2.5 jam Tersimpan",
@@ -18,11 +18,11 @@
     },
     "phone": {
       "greeting": "Assalamu 'Alaikum 👋",
-      "todayBalance": "Keseimbangan Hari Ini",
+      "todayBalance": "Produktivitas Hari Ini",
       "screenTime": "Waktu Layar Hari Ini",
       "blocked": "🔒 Diblokir hingga Maghrib",
       "quran": "✓ 45 menit hari ini",
-      "prayer": "✓ 5/5 Selesai",
+      "whatsapp": "✓ 19 menit hari ini",
       "apps": {
         "instagram": {
           "name": "Instagram",
@@ -32,16 +32,16 @@
           "name": "Quran",
           "status": "✓ 45 menit hari ini"
         },
-        "prayer": {
-          "name": "Sholat",
-          "status": "✓ 5/5 Selesai"
+        "whatsapp": {
+          "name": "Whatsapp",
+          "status": "✓ 19 menit hari ini"
         }
       }
     }
   },
   "timeCapsule": {
-    "title": "Kapsul Waktu 2026",
-    "subtitle": "Tulis pesan untuk diri Anda di masa depan. Kami akan mengirimkannya pada 1 Januari 2027—bersama perjalanan waktu layar Anda.",
+    "title": "Kapsul Waktu",
+    "subtitle": "Tulis sebuah pesan untuk dirimu di masa depan. Kapsul waktu akan menjaga dan mengirimkannya kembali padamu di tanggal 1 Januari 2027",
     "form": {
       "nameLabel": "Nama",
       "namePlaceholder": "Nama panggilan",
@@ -49,20 +49,20 @@
       "emailPlaceholder": "Email tujuan pengiriman",
       "resolutionLabel": "Resolusi 2026",
       "resolutionPlaceholder": "Tulis resolusi, harapan, mimpi, atau surat untuk diri di masa depan...",
-      "helper": "💡 Lebih spesifik! 💡 Detail hari ini bisa jadi pengingat berharga di masa depan",
+      "helper": "💡 Lebih spesifik! Detaile hari ini bisa jadi pengingat berharga di masa depan",
       "prompts": {
-        "lessPhone": "📱 Kurangi main ponsel",
-        "achievement": "🎯 Pencapaian",
-        "letterToSelf": "💌 Pesan untuk masa depan",
-        "familyFocus": "👨‍👩‍👧‍👦 Prioritaskan keluarga",
-        "spiritualGrowth": "🕌 Ketenangan batin"
+        "lessPhone": "📱",
+        "achievement": "🎯",
+        "letterToSelf": "💌",
+        "familyFocus": "👨‍👩‍👧‍👦 ",
+        "spiritualGrowth": "🕌"
       },
       "promptTexts": {
-        "lessPhone": "Di tahun 2026, saya ingin mengurangi waktu di ponsel dan lebih banyak waktu ",
-        "achievement": "Di akhir 2026, saya akan mencapai ",
-        "letterToSelf": "Teman masa depan, saya harap akhirnya ",
-        "familyFocus": "Saya ingin lebih hadir dengan ",
-        "spiritualGrowth": "Saya ingin memperkuat iman dengan "
+        "lessPhone": "Di tahun 2026, saya ingin mengurangi waktu scrolling dan lebih banyak waktu ...",
+        "achievement": "Di akhir 2026, saya akan mencapai ...",
+        "letterToSelf": "Hi diriku di masa depan, saya harap akhirnya ...",
+        "familyFocus": "Saya ingin lebih banyak waktu untuk menemani ...",
+        "spiritualGrowth": "Saya ingin menjadi lebih baik dengan ..."
       },
       "note": {
         "title": "Pesan terenkripsi.",

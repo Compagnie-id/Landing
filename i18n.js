@@ -165,9 +165,9 @@ class I18n {
         this.updateText('.phone-app:nth-child(2) .phone-app-name', 'hero.phone.apps.quran.name');
         this.updateText('.phone-app:nth-child(2) .phone-app-status', 'hero.phone.apps.quran.status');
 
-        // Update Prayer app
-        this.updateText('.phone-app:nth-child(3) .phone-app-name', 'hero.phone.apps.prayer.name');
-        this.updateText('.phone-app:nth-child(3) .phone-app-status', 'hero.phone.apps.prayer.status');
+        // Update Whatsapp app
+        this.updateText('.phone-app:nth-child(3) .phone-app-name', 'hero.phone.apps.whatsapp.name');
+        this.updateText('.phone-app:nth-child(3) .phone-app-status', 'hero.phone.apps.whatsapp.status');
     }
 
     updateTimeCapsule() {

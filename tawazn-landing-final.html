@@ -1,1814 +1,2081 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tawazn - Find Your Digital Balance | 2026 Resolution</title>
-    <meta name="description" content="Reclaim your time. Protect your focus. Live with balance. Write your 2026 resolution and get it back in a year.">
-    
+    <meta
+      name="description"
+      content="Reclaim your time. Protect your focus. Live with balance. Write your 2026 resolution and get it back in a year."
+    />
+
     <!-- Fonts - System default to match app -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Amiri:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- i18n Styles -->
-    <link rel="stylesheet" href="i18n.css">
-    
+    <link rel="stylesheet" href="i18n.css" />
+
     <style>
-        :root {
-            /* === TAWAZN APP COLOR SYSTEM === */
-            
-            /* Primary Brand Colors - Softened */
-            --primary: #818CF8;           /* Soft indigo - Primary */
-            --primary-variant: #6366F1;   /* Medium indigo */
-            --secondary: #A78BFA;         /* Soft purple - Secondary */
-            --secondary-variant: #8B5CF6;
-            --accent: #F472B6;            /* Soft pink - Accent */
-            --accent-variant: #EC4899;
-            
-            /* Neubrutalism Core */
-            --neu-black: #1A1A2E;         /* Deep navy black */
-            --neu-border: #2D2D44;        /* Border color */
-            
-            /* Neubrutalism Accent Cards - Pastel Version */
-            --neu-yellow: #FEF3CD;        /* Soft pastel yellow */
-            --neu-green: #D1FAE5;         /* Soft pastel green */
-            --neu-orange: #FED7AA;        /* Soft pastel orange */
-            --neu-cyan: #E0F7FA;          /* Soft pastel cyan */
-            --neu-pink: #FCE7F3;          /* Soft pastel pink */
-            --neu-lavender: #EDE9FE;      /* Soft pastel lavender */
-            --neu-red: #FECACA;           /* Soft pastel red */
-            
-            /* Light Theme Backgrounds */
-            --background-light: #FEFEFF;  /* Soft blue-white */
-            --surface-light: #FFFFFF;
-            --card-light: #FFFFFF;
-            --text-primary-light: #1F2937;
-            --text-secondary-light: #6B7280;
-            
-            /* Status Colors */
-            --success: #10B981;
-            --warning: #F59E0B;
-            --error: #EF4444;
-            --info: #3B82F6;
-            
-            /* Shadow & Border Config (matching app: 4dp offset, 3dp border) */
-            --shadow-offset: 4px;
-            --border-width: 3px;
-            --shadow: var(--shadow-offset) var(--shadow-offset) 0px var(--neu-black);
-            --shadow-lg: 6px 6px 0px var(--neu-black);
-            --shadow-sm: 2px 2px 0px var(--neu-black);
-            --border: var(--border-width) solid var(--neu-black);
-            
-            /* Typography - matching app's Inter/system font */
-            --font-display: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            --font-arabic: 'Amiri', serif;
-        }
+      :root {
+        /* === TAWAZN APP COLOR SYSTEM === */
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        /* Primary Brand Colors - Islamic Lush Forest Theme */
+        --primary: #059669; /* Balanced emerald - Primary */
+        --primary-variant: #047857; /* Deep emerald - Primary variant */
+        --secondary: #0d9488; /* Harmonious teal - Secondary */
+        --secondary-variant: #0f766e; /* Deep teal variant */
+        --accent: #0f766e; /* Integrated accent - matches secondary variant */
+        --accent-variant: #115e59;
 
-        html {
-            scroll-behavior: smooth;
-        }
+        /* Neubrutalism Core - Islamic Theme */
+        --neu-black: #14532d; /* Deep forest black - better harmony */
+        --neu-border: #166534; /* Forest border - harmonized with primary */
 
-        body {
-            font-family: var(--font-display);
-            background: var(--background-light);
-            color: var(--text-primary-light);
-            line-height: 1.5;
-            overflow-x: hidden;
-        }
+        /* Neubrutalism Accent Cards - Harmonized Pastel Version */
+        --neu-yellow: #fef3c7; /* Warm saffron pastel */
+        --neu-green: #d1fae5; /* Soft emerald pastel */
+        --neu-orange: #fed7aa; /* Balanced sandalwood pastel */
+        --neu-cyan: #cffafe; /* Sky blue pastel - complementary */
+        --neu-pink: #fce7f3; /* Soft rose pastel */
+        --neu-lavender: #e9d5ff; /* Soft purple pastel */
+        --neu-red: #fecaca; /* Soft coral pastel */
 
-        /* === NAVIGATION === */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            padding: 1rem 2rem;
-            background: var(--neu-yellow);
-            border-bottom: var(--border);
-        }
+        /* Light Theme Backgrounds - Islamic Theme */
+        --background-light: #f0fdf4; /* Subtle green-tinted white */
+        --surface-light: #ffffff;
+        --card-light: #ffffff;
+        --text-primary-light: #14532d; /* Deep forest text - better contrast */
+        --text-secondary-light: #166534; /* Forest green text - harmonized */
 
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            /* position: relative; */
-        }
+        /* Status Colors - Harmonized Forest Theme */
+        --success: #059669; /* Emerald green - matches primary */
+        --warning: #f59e0b; /* Balanced amber */
+        --error: #dc2626; /* Deep red */
+        --info: #0d9488; /* Harmonious teal - matches secondary */
 
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
+        /* Shadow & Border Config (matching app: 4dp offset, 3dp border) */
+        --shadow-offset: 4px;
+        --border-width: 3px;
+        --shadow: var(--shadow-offset) var(--shadow-offset) 0px var(--neu-black);
+        --shadow-lg: 6px 6px 0px var(--neu-black);
+        --shadow-sm: 2px 2px 0px var(--neu-black);
+        --border: var(--border-width) solid var(--neu-black);
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            text-decoration: none;
-            color: var(--neu-black);
-        }
+        /* Typography - matching app's Inter/system font */
+        --font-display: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+        --font-arabic: "Amiri", serif;
+      }
 
-        .logo-box {
-            width: 48px;
-            height: 48px;
-            background: var(--primary);
-            border: var(--border);
-            box-shadow: var(--shadow-sm);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: var(--font-arabic);
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: white;
-            transform: rotate(-2deg);
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        .logo-text {
-            font-size: 1.75rem;
-            font-weight: 900;
-            letter-spacing: -0.02em;
-            color: var(--neu-black);
-        }
+      html {
+        scroll-behavior: smooth;
+      }
 
-        .logo-arabic {
-            font-family: var(--font-arabic);
-            font-size: 2rem;
-            font-weight: 900;
-            letter-spacing: -0.02em;
-            color: var(--neu-black);
-            display: none;
-        }
+      body {
+        font-family: var(--font-display);
+        background: var(--background-light);
+        color: var(--text-primary-light);
+        line-height: 1.5;
+        overflow-x: hidden;
+      }
 
-        [lang="ar"] .logo-text {
-            display: none;
-        }
+      /* === NAVIGATION === */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        padding: 1rem 2rem;
+        background: var(--neu-yellow);
+        border-bottom: var(--border);
+      }
 
-        [lang="ar"] .logo-arabic {
-            display: inline;
-        }
+      .nav-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* position: relative; */
+      }
 
-  
-        .nav-links a {
-            color: var(--neu-black);
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.95rem;
-            padding: 0.5rem 1rem;
-            border: 2px solid transparent;
-            transition: all 0.15s ease;
-        }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+      }
 
-        .nav-links a:hover {
-            border-color: var(--neu-black);
-            background: var(--surface-light);
-        }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        text-decoration: none;
+        color: var(--neu-black);
+      }
 
-        /* === BUTTONS === */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 1.75rem;
-            font-family: var(--font-display);
-            font-size: 1rem;
-            font-weight: 700;
-            text-decoration: none;
-            border: var(--border);
-            cursor: pointer;
-            transition: all 0.1s ease;
-            text-transform: uppercase;
-            letter-spacing: 0.02em;
-        }
+      .logo-box {
+        width: 48px;
+        height: 48px;
+        background: var(--primary);
+        border: var(--border);
+        box-shadow: var(--shadow-sm);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--font-arabic);
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: white;
+        transform: rotate(-3deg);
+      }
 
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-            box-shadow: var(--shadow);
-        }
+      .logo-box img {
+        width: 120%;
+        height: 120%;
+        object-fit: contain;
+        display: block;
+        filter: brightness(0) invert(1);
+      }
 
-        .btn-primary:hover {
-            transform: translate(-2px, -2px);
-            box-shadow: var(--shadow-lg);
-        }
+      .logo-text {
+        font-size: 1.75rem;
+        font-weight: 900;
+        letter-spacing: -0.02em;
+        color: var(--neu-black);
+      }
 
-        .btn-primary:active {
-            transform: translate(2px, 2px);
-            box-shadow: var(--shadow-sm);
-        }
+      .logo-arabic {
+        font-family: var(--font-arabic);
+        font-size: 2rem;
+        font-weight: 900;
+        letter-spacing: -0.02em;
+        color: var(--neu-black);
+        display: none;
+      }
 
-        .btn-secondary {
-            background: var(--surface-light);
-            color: var(--neu-black);
-            box-shadow: var(--shadow);
-        }
+      [lang="ar"] .logo-text {
+        display: none;
+      }
 
-        .btn-secondary:hover {
-            transform: translate(-2px, -2px);
-            box-shadow: var(--shadow-lg);
-            background: var(--neu-yellow);
-        }
+      [lang="ar"] .logo-arabic {
+        display: inline;
+      }
 
-        .btn-accent {
-            background: var(--accent);
-            color: white;
-            box-shadow: var(--shadow);
-        }
+      .nav-links a {
+        color: var(--neu-black);
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 0.95rem;
+        padding: 0.5rem 1rem;
+        border: 2px solid transparent;
+        transition: all 0.15s ease;
+      }
 
-        .btn-accent:hover {
-            transform: translate(-2px, -2px);
-            box-shadow: var(--shadow-lg);
-        }
+      .nav-links a:hover {
+        border-color: var(--neu-black);
+        background: var(--surface-light);
+      }
 
-        .btn-large {
-            padding: 1.25rem 2.5rem;
-            font-size: 1.1rem;
-        }
+      /* === BUTTONS === */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1rem 1.75rem;
+        font-family: var(--font-display);
+        font-size: 1rem;
+        font-weight: 700;
+        text-decoration: none;
+        border: var(--border);
+        cursor: pointer;
+        transition: all 0.1s ease;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+      }
 
-        /* === HERO SECTION === */
-        .hero {
-            min-height: 100vh;
-            padding: 10rem 2rem 6rem;
-            background: var(--neu-yellow);
-            position: relative;
-            overflow: hidden;
-        }
+      .btn-primary {
+        background: var(--primary);
+        color: white;
+        box-shadow: var(--shadow);
+      }
 
+      .btn-primary:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .btn-primary:active {
+        transform: translate(2px, 2px);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .btn-secondary {
+        background: var(--surface-light);
+        color: var(--neu-black);
+        box-shadow: var(--shadow);
+      }
+
+      .btn-secondary:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: var(--shadow-lg);
+        background: var(--neu-yellow);
+      }
+
+      .btn-accent {
+        background: var(--accent);
+        color: white;
+        box-shadow: var(--shadow);
+      }
+
+      .btn-accent:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .btn-large {
+        padding: 1.25rem 2.5rem;
+        font-size: 1.1rem;
+      }
+
+      /* === HERO SECTION === */
+      .hero {
+        min-height: 100vh;
+        padding: 10rem 2rem 6rem;
+        background: var(--neu-yellow);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 4rem;
+        align-items: center;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.75rem 1.25rem;
+        background: var(--neu-black);
+        color: var(--neu-yellow);
+        font-size: 0.85rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 1.5rem;
+        border: var(--border);
+      }
+
+      .hero-badge-dot {
+        width: 10px;
+        height: 10px;
+        background: var(--neu-green);
+        border-radius: 50%;
+        animation: pulse 1.5s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.5;
+          transform: scale(0.9);
+        }
+      }
+
+      .hero-title {
+        font-size: clamp(2.5rem, 6vw, 4rem);
+        font-weight: 900;
+        line-height: 0.95;
+        letter-spacing: -0.03em;
+        margin-bottom: 1.5rem;
+        color: var(--neu-black);
+      }
+
+      .hero-title-highlight {
+        position: relative;
+        display: inline-block;
+      }
+
+      .hero-title-highlight::after {
+        content: "";
+        position: absolute;
+        bottom: 0.05em;
+        left: -0.05em;
+        right: -0.05em;
+        height: 0.3em;
+        background: var(--primary);
+        z-index: -1;
+        transform: rotate(-1deg);
+      }
+
+      .hero-subtitle {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        max-width: 540px;
+        margin-bottom: 2.5rem;
+        color: var(--text-primary-light);
+        font-weight: 500;
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      /* === PHONE MOCKUP === */
+      .hero-visual {
+        position: relative;
+      }
+
+      .phone-container {
+        position: relative;
+        transform: rotate(2deg);
+      }
+
+      .phone-mockup {
+        width: 300px;
+        background: var(--surface-light);
+        border: var(--border);
+        box-shadow: 8px 8px 0px var(--neu-black);
+        border-radius: 24px;
+        padding: 0.75rem;
+        margin: 0 auto;
+      }
+
+      .phone-screen {
+        background: var(--background-light);
+        border: var(--border);
+        border-radius: 18px;
+        padding: 1.25rem;
+        min-height: 480px;
+      }
+
+      .phone-header {
+        text-align: center;
+        margin-bottom: 1.25rem;
+        padding-bottom: 1rem;
+        border-bottom: 2px dashed var(--neu-border);
+      }
+
+      .phone-greeting {
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--primary);
+      }
+
+      .phone-date {
+        font-weight: 900;
+        font-size: 1.1rem;
+        color: var(--neu-black);
+      }
+
+      .phone-stats {
+        background: var(--primary);
+        border: var(--border);
+        box-shadow: var(--shadow);
+        padding: 1.25rem;
+        margin-bottom: 1rem;
+      }
+
+      .phone-time-display {
+        font-size: 2.5rem;
+        font-weight: 900;
+        color: white;
+        text-align: center;
+        letter-spacing: -0.02em;
+      }
+
+      .phone-time-label {
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--neu-yellow);
+        text-align: center;
+      }
+
+      .phone-progress {
+        margin-top: 0.75rem;
+        height: 10px;
+        background: var(--neu-black);
+        border: 2px solid var(--neu-black);
+      }
+
+      .phone-progress-bar {
+        height: 100%;
+        width: 35%;
+        background: var(--neu-yellow);
+      }
+
+      .phone-apps {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+
+      .phone-app {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.6rem;
+        background: var(--surface-light);
+        border: 2px solid var(--neu-black);
+      }
+
+      .phone-app-icon {
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+        border: 2px solid var(--neu-black);
+      }
+
+      .phone-app-icon.blocked {
+        background: var(--neu-red);
+      }
+      .phone-app-icon.allowed {
+        background: var(--neu-green);
+      }
+
+      .phone-app-name {
+        font-weight: 700;
+        font-size: 0.8rem;
+      }
+
+      .phone-app-status {
+        font-size: 0.65rem;
+        font-weight: 600;
+        color: var(--text-secondary-light);
+        text-transform: uppercase;
+      }
+
+      /* === STICKERS === */
+      .sticker {
+        position: absolute;
+        padding: 0.6rem 1rem;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        border: var(--border);
+        box-shadow: var(--shadow-sm);
+        z-index: 10;
+      }
+
+      .sticker-1 {
+        top: 5%;
+        right: 0;
+        background: var(--accent);
+        color: white;
+        transform: rotate(8deg);
+      }
+
+      .sticker-2 {
+        bottom: 25%;
+        left: -5%;
+        background: var(--neu-green);
+        color: var(--neu-black);
+        transform: rotate(-6deg);
+      }
+
+      .sticker-3 {
+        top: 35%;
+        right: -10%;
+        background: var(--neu-cyan);
+        color: var(--neu-black);
+        transform: rotate(4deg);
+      }
+
+      /* === TIME CAPSULE SECTION === */
+      .time-capsule {
+        padding: 6rem 2rem;
+        background: var(--primary);
+        position: relative;
+      }
+
+      .time-capsule::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 16px;
+        background: repeating-linear-gradient(
+          90deg,
+          var(--neu-black) 0px,
+          var(--neu-black) 16px,
+          var(--neu-yellow) 16px,
+          var(--neu-yellow) 32px
+        );
+      }
+
+      .capsule-container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .capsule-header {
+        text-align: center;
+        margin-bottom: 2.5rem;
+      }
+
+      .capsule-icon {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+        display: inline-block;
+        animation: float 2.5s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0) rotate(-3deg);
+        }
+        50% {
+          transform: translateY(-10px) rotate(3deg);
+        }
+      }
+
+      .capsule-title {
+        font-size: clamp(2rem, 5vw, 3rem);
+        font-weight: 900;
+        color: white;
+        margin-bottom: 0.75rem;
+      }
+
+      .capsule-subtitle {
+        font-size: 1.1rem;
+        color: var(--neu-yellow);
+        max-width: 550px;
+        margin: 0 auto;
+        font-weight: 500;
+      }
+
+      .capsule-form {
+        background: var(--surface-light);
+        border: var(--border);
+        box-shadow: 8px 8px 0px var(--neu-black);
+        padding: 2.5rem;
+      }
+
+      .form-group {
+        margin-bottom: 1.25rem;
+      }
+
+      .form-label {
+        display: block;
+        font-weight: 700;
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--neu-black);
+      }
+
+      .form-input,
+      .form-textarea {
+        width: 100%;
+        padding: 0.875rem 1rem;
+        font-family: var(--font-display);
+        font-size: 1rem;
+        border: var(--border);
+        background: var(--background-light);
+        transition: all 0.15s ease;
+        font-weight: 500;
+      }
+
+      .form-input:focus,
+      .form-textarea:focus {
+        outline: none;
+        box-shadow: var(--shadow);
+        transform: translate(-2px, -2px);
+      }
+
+      .form-textarea {
+        min-height: 160px;
+        max-height: 400px;
+        resize: none;
+        line-height: 1.6;
+        transition: min-height 0.2s ease;
+      }
+
+      .form-helper {
+        font-size: 0.8rem;
+        color: var(--primary);
+        margin-top: 0.4rem;
+        font-weight: 600;
+      }
+
+      .capsule-prompts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin-bottom: 1rem;
+      }
+
+      .prompt-tag {
+        padding: 0.4rem 0.75rem;
+        background: var(--neu-lavender);
+        border: 2px solid var(--neu-black);
+        font-size: 0.7rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.1s ease;
+      }
+
+      .prompt-tag:hover {
+        background: var(--primary);
+        color: white;
+        transform: translate(-2px, -2px);
+        box-shadow: 2px 2px 0px var(--neu-black);
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.25rem;
+      }
+
+      .capsule-note {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        padding: 1rem;
+        background: var(--neu-cyan);
+        border: 2px dashed var(--neu-black);
+        margin-top: 1.25rem;
+      }
+
+      .capsule-note-icon {
+        font-size: 1.25rem;
+        flex-shrink: 0;
+      }
+
+      .capsule-note-text {
+        font-size: 0.85rem;
+        line-height: 1.5;
+        font-weight: 500;
+      }
+
+      .form-submit-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 2px dashed var(--neu-border);
+      }
+
+      .delivery-date {
+        font-size: 0.85rem;
+        font-weight: 600;
+      }
+
+      .delivery-date strong {
+        display: block;
+        font-size: 1.1rem;
+        color: var(--primary);
+        font-weight: 900;
+      }
+
+      /* === FEATURES SECTION === */
+      .features {
+        padding: 6rem 2rem;
+        background: var(--surface-light);
+        border-top: var(--border);
+        border-bottom: var(--border);
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 3.5rem;
+      }
+
+      .section-tag {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: var(--neu-black);
+        color: var(--neu-yellow);
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 1.25rem;
+        border: var(--border);
+      }
+
+      .section-title {
+        font-size: clamp(2rem, 5vw, 3rem);
+        font-weight: 900;
+        letter-spacing: -0.02em;
+        margin-bottom: 0.75rem;
+        color: var(--neu-black);
+      }
+
+      .section-subtitle {
+        font-size: 1.1rem;
+        color: var(--text-secondary-light);
+        max-width: 550px;
+        margin: 0 auto;
+        font-weight: 500;
+      }
+
+      .features-intro {
+        max-width: 800px;
+        margin: 2rem auto 3rem;
+        padding: 2rem;
+        background: var(--neu-lavender);
+        border: var(--border);
+        box-shadow: var(--shadow);
+        transform: rotate(-0.5deg);
+      }
+
+      .features-intro:hover {
+        transform: rotate(0deg);
+      }
+
+      .features-intro-text {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        color: var(--text-primary-light);
+        font-weight: 500;
+        text-align: center;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 1.5rem;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .feature-card {
+        background: var(--background-light);
+        border: var(--border);
+        box-shadow: var(--shadow);
+        padding: 1.75rem;
+        transition: all 0.15s ease;
+      }
+
+      .feature-card:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      /* Rotate cards slightly for neubrutalism effect */
+      .feature-card:nth-child(1) {
+        transform: rotate(-0.5deg);
+      }
+      .feature-card:nth-child(2) {
+        transform: rotate(0.3deg);
+      }
+      .feature-card:nth-child(3) {
+        transform: rotate(-0.3deg);
+      }
+      .feature-card:nth-child(4) {
+        transform: rotate(0.5deg);
+      }
+      .feature-card:nth-child(5) {
+        transform: rotate(-0.4deg);
+      }
+      .feature-card:nth-child(6) {
+        transform: rotate(0.2deg);
+      }
+
+      .feature-card:hover {
+        transform: translate(-2px, -2px) rotate(0deg) !important;
+      }
+
+      .feature-icon {
+        width: 56px;
+        height: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.75rem;
+        border: var(--border);
+        margin-bottom: 1.25rem;
+      }
+
+      .feature-card:nth-child(1) .feature-icon {
+        background: var(--neu-pink);
+      }
+      .feature-card:nth-child(2) .feature-icon {
+        background: var(--neu-cyan);
+      }
+      .feature-card:nth-child(3) .feature-icon {
+        background: var(--neu-green);
+      }
+      .feature-card:nth-child(4) .feature-icon {
+        background: var(--neu-orange);
+      }
+      .feature-card:nth-child(5) .feature-icon {
+        background: var(--neu-lavender);
+      }
+      .feature-card:nth-child(6) .feature-icon {
+        background: var(--neu-yellow);
+      }
+
+      .feature-title {
+        font-size: 1.2rem;
+        font-weight: 900;
+        margin-bottom: 0.5rem;
+        color: var(--neu-black);
+      }
+
+      .feature-desc {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: var(--text-secondary-light);
+        font-weight: 500;
+      }
+
+      /* === IMPACT SECTION === */
+      .impact {
+        padding: 6rem 2rem;
+        background: var(--neu-green);
+        position: relative;
+      }
+
+      .impact::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 16px;
+        background: repeating-linear-gradient(
+          90deg,
+          var(--neu-black) 0px,
+          var(--neu-black) 16px,
+          var(--surface-light) 16px,
+          var(--surface-light) 32px
+        );
+      }
+
+      .impact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        max-width: 1100px;
+        margin: 0 auto;
+        align-items: center;
+      }
+
+      .impact-content h2 {
+        font-size: clamp(2rem, 4vw, 2.75rem);
+        font-weight: 900;
+        margin-bottom: 1.25rem;
+        color: var(--neu-black);
+      }
+
+      .impact-content p {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+        font-weight: 500;
+        color: var(--neu-black);
+      }
+
+      .impact-stat-box {
+        background: var(--surface-light);
+        border: var(--border);
+        box-shadow: 8px 8px 0px var(--neu-black);
+        padding: 2.5rem;
+        text-align: center;
+        transform: rotate(1deg);
+      }
+
+      .impact-stat-number {
+        font-size: 5rem;
+        font-weight: 900;
+        line-height: 1;
+        color: var(--primary);
+      }
+
+      .impact-stat-label {
+        font-size: 1.25rem;
+        font-weight: 900;
+        margin-top: 0.5rem;
+        color: var(--neu-black);
+      }
+
+      .impact-stat-desc {
+        font-size: 0.8rem;
+        margin-top: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-weight: 700;
+        color: var(--text-secondary-light);
+      }
+
+      .impact-causes {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        margin-top: 1.5rem;
+      }
+
+      .cause-tag {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.6rem 1rem;
+        background: var(--neu-black);
+        color: white;
+        border: 2px solid var(--neu-black);
+        font-weight: 700;
+        font-size: 0.85rem;
+      }
+
+      /* === PRICING SECTION === */
+      .pricing {
+        padding: 6rem 2rem;
+        background: var(--background-light);
+      }
+
+      .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .pricing-card {
+        background: var(--surface-light);
+        border: var(--border);
+        box-shadow: var(--shadow);
+        padding: 2rem;
+        position: relative;
+        transition: all 0.15s ease;
+      }
+
+      .pricing-card:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .pricing-card.featured {
+        background: var(--neu-yellow);
+        transform: scale(1.03) rotate(-1deg);
+        z-index: 2;
+      }
+
+      .pricing-card.featured:hover {
+        transform: scale(1.03) rotate(0deg) translate(-2px, -2px);
+      }
+
+      .pricing-badge {
+        position: absolute;
+        top: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 0.4rem 1.25rem;
+        background: var(--primary);
+        color: white;
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        border: var(--border);
+      }
+
+      .pricing-name {
+        font-size: 1.1rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 0.75rem;
+        color: var(--neu-black);
+      }
+
+      .pricing-price {
+        margin-bottom: 1.25rem;
+      }
+
+      .pricing-amount {
+        font-size: 3rem;
+        font-weight: 900;
+        color: var(--neu-black);
+      }
+
+      .pricing-period {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--text-secondary-light);
+      }
+
+      .pricing-features {
+        list-style: none;
+        margin-bottom: 1.5rem;
+      }
+
+      .pricing-features li {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        padding: 0.6rem 0;
+        border-bottom: 2px dashed var(--neu-border);
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+
+      .pricing-features li:last-child {
+        border-bottom: none;
+      }
+
+      .pricing-check {
+        font-size: 1.1rem;
+      }
+
+      /* === CTA SECTION === */
+      .cta {
+        padding: 6rem 2rem;
+        background: var(--neu-black);
+        color: white;
+        text-align: center;
+      }
+
+      .cta-container {
+        max-width: 650px;
+        margin: 0 auto;
+      }
+
+      .cta-icon {
+        font-size: 3.5rem;
+        margin-bottom: 1.25rem;
+      }
+
+      .cta-title {
+        font-size: clamp(2rem, 5vw, 3rem);
+        font-weight: 900;
+        margin-bottom: 0.75rem;
+      }
+
+      .cta-subtitle {
+        font-size: 1.1rem;
+        color: var(--neu-yellow);
+        margin-bottom: 2rem;
+        font-weight: 500;
+      }
+
+      .cta-form {
+        display: flex;
+        gap: 0.75rem;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .cta-input {
+        flex: 1;
+        padding: 1rem 1.25rem;
+        font-family: var(--font-display);
+        font-size: 1rem;
+        border: var(--border);
+        background: var(--surface-light);
+        font-weight: 500;
+      }
+
+      .cta-input:focus {
+        outline: none;
+        box-shadow: var(--shadow);
+      }
+
+      /* === FOOTER === */
+      footer {
+        padding: 3rem 2rem 1.5rem;
+        background: var(--neu-yellow);
+        border-top: var(--border);
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 2.5rem;
+        max-width: 1100px;
+        margin: 0 auto 2rem;
+      }
+
+      .footer-brand p {
+        margin-top: 0.75rem;
+        font-size: 0.9rem;
+        line-height: 1.6;
+        color: var(--text-secondary-light);
+        font-weight: 500;
+      }
+
+      .footer-column h4 {
+        font-size: 0.8rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid var(--neu-black);
+        color: var(--neu-black);
+      }
+
+      .footer-column ul {
+        list-style: none;
+      }
+
+      .footer-column ul li {
+        margin-bottom: 0.5rem;
+      }
+
+      .footer-column ul a {
+        color: var(--text-primary-light);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.15s ease;
+      }
+
+      .footer-column ul a:hover {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 1.5rem;
+        border-top: 2px solid var(--neu-black);
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .footer-copyright {
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--text-secondary-light);
+      }
+
+      .footer-social {
+        display: flex;
+        gap: 0.5rem;
+      }
+
+      .footer-social a {
+        width: 40px;
+        height: 40px;
+        background: var(--neu-black);
+        color: var(--neu-yellow);
+        border: 2px solid var(--neu-black);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 0.85rem;
+        transition: all 0.1s ease;
+      }
+
+      .footer-social a:hover {
+        background: var(--primary);
+        color: white;
+        transform: translate(-2px, -2px);
+        box-shadow: 2px 2px 0px var(--neu-black);
+      }
+
+      /* === MODAL === */
+      .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(26, 26, 46, 0.9);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        padding: 2rem;
+      }
+
+      .modal-overlay.active {
+        display: flex;
+      }
+
+      .modal {
+        background: var(--surface-light);
+        border: var(--border);
+        box-shadow: 12px 12px 0px var(--neu-black);
+        padding: 2.5rem;
+        max-width: 450px;
+        width: 100%;
+        text-align: center;
+        position: relative;
+        animation: modalPop 0.2s ease;
+      }
+
+      @keyframes modalPop {
+        from {
+          opacity: 0;
+          transform: scale(0.95);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .modal-close {
+        position: absolute;
+        top: 0.75rem;
+        right: 0.75rem;
+        width: 36px;
+        height: 36px;
+        background: var(--neu-black);
+        color: white;
+        border: none;
+        font-size: 1.25rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+      }
+
+      .modal-icon {
+        font-size: 3.5rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .modal-title {
+        font-size: 1.75rem;
+        font-weight: 900;
+        margin-bottom: 0.5rem;
+        color: var(--neu-black);
+      }
+
+      .modal-message {
+        font-size: 0.95rem;
+        margin-bottom: 1.25rem;
+        line-height: 1.6;
+        color: var(--text-secondary-light);
+        font-weight: 500;
+      }
+
+      .modal-date {
+        background: var(--neu-yellow);
+        border: var(--border);
+        padding: 0.875rem;
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+
+      .modal-date strong {
+        display: block;
+        font-size: 1.1rem;
+        color: var(--primary);
+        font-weight: 900;
+      }
+
+      /* === RESPONSIVE === */
+      @media (max-width: 1024px) {
         .hero-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 0.75rem 1.25rem;
-            background: var(--neu-black);
-            color: var(--neu-yellow);
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 1.5rem;
-            border: var(--border);
-        }
-
-        .hero-badge-dot {
-            width: 10px;
-            height: 10px;
-            background: var(--neu-green);
-            border-radius: 50%;
-            animation: pulse 1.5s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(0.9); }
-        }
-
-  
-        .hero-title {
-            font-size: clamp(2.5rem, 6vw, 4rem);
-            font-weight: 900;
-            line-height: 0.95;
-            letter-spacing: -0.03em;
-            margin-bottom: 1.5rem;
-            color: var(--neu-black);
-        }
-
-        .hero-title-highlight {
-            position: relative;
-            display: inline-block;
-        }
-
-        .hero-title-highlight::after {
-            content: '';
-            position: absolute;
-            bottom: 0.05em;
-            left: -0.05em;
-            right: -0.05em;
-            height: 0.3em;
-            background: var(--primary);
-            z-index: -1;
-            transform: rotate(-1deg);
+          grid-template-columns: 1fr;
+          text-align: center;
         }
 
         .hero-subtitle {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            max-width: 540px;
-            margin-bottom: 2.5rem;
-            color: var(--text-primary-light);
-            font-weight: 500;
+          margin-left: auto;
+          margin-right: auto;
         }
-
         .hero-actions {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
+          justify-content: center;
         }
-
-        /* === PHONE MOCKUP === */
         .hero-visual {
-            position: relative;
+          margin-top: 2.5rem;
+        }
+        .phone-container {
+          transform: none;
+        }
+        .impact-grid {
+          grid-template-columns: 1fr;
+        }
+        .impact-stat-box {
+          transform: none;
+        }
+        .pricing-grid {
+          grid-template-columns: 1fr;
+          max-width: 380px;
+        }
+        .pricing-card.featured {
+          transform: none;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 768px) {
+        nav {
+          padding: 0.875rem 1.25rem;
+        }
+        .nav-links {
+          display: none;
+        }
+        .hero {
+          padding: 7rem 1.25rem 4rem;
+        }
+        .hero-title {
+          font-size: 2rem;
+        }
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+        .form-submit-row {
+          flex-direction: column;
+          gap: 1.25rem;
+          text-align: center;
+        }
+        .cta-form {
+          flex-direction: column;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+        .footer-bottom {
+          flex-direction: column;
+          gap: 1rem;
+          text-align: center;
+        }
+        .sticker {
+          display: none;
+        }
+        .features-grid {
+          grid-template-columns: 1fr;
         }
 
+        /* Phone mockup mobile fixes */
         .phone-container {
-            position: relative;
-            transform: rotate(2deg);
+          transform: rotate(2deg);
+          margin: 2rem auto;
+          max-width: 280px;
         }
 
         .phone-mockup {
-            width: 300px;
-            background: var(--surface-light);
-            border: var(--border);
-            box-shadow: 8px 8px 0px var(--neu-black);
-            border-radius: 24px;
-            padding: 0.75rem;
-            margin: 0 auto;
+          width: 100%;
+          max-width: 280px;
+          padding: 0.5rem;
         }
 
         .phone-screen {
-            background: var(--background-light);
-            border: var(--border);
-            border-radius: 18px;
-            padding: 1.25rem;
-            min-height: 480px;
-        }
-
-        .phone-header {
-            text-align: center;
-            margin-bottom: 1.25rem;
-            padding-bottom: 1rem;
-            border-bottom: 2px dashed var(--neu-border);
-        }
-
-        .phone-greeting {
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--primary);
-        }
-
-        .phone-date {
-            font-weight: 900;
-            font-size: 1.1rem;
-            color: var(--neu-black);
+          padding: 1rem;
+          min-height: 420px;
         }
 
         .phone-stats {
-            background: var(--primary);
-            border: var(--border);
-            box-shadow: var(--shadow);
-            padding: 1.25rem;
-            margin-bottom: 1rem;
-            transform: rotate(-1deg);
+          padding: 1rem;
+          margin-bottom: 0.75rem;
         }
 
         .phone-time-display {
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: white;
-            text-align: center;
-            letter-spacing: -0.02em;
-        }
-
-        .phone-time-label {
-            font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--neu-yellow);
-            text-align: center;
-        }
-
-        .phone-progress {
-            margin-top: 0.75rem;
-            height: 10px;
-            background: var(--neu-black);
-            border: 2px solid var(--neu-black);
-        }
-
-        .phone-progress-bar {
-            height: 100%;
-            width: 35%;
-            background: var(--neu-yellow);
-        }
-
-        .phone-apps {
-            display: flex;
-            flex-direction: column;
-            gap: 0.6rem;
+          font-size: 2.2rem;
         }
 
         .phone-app {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 0.6rem;
-            background: var(--surface-light);
-            border: 2px solid var(--neu-black);
+          padding: 0.5rem;
+          gap: 0.5rem;
         }
 
         .phone-app-icon {
-            width: 32px;
-            height: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-            border: 2px solid var(--neu-black);
+          width: 28px;
+          height: 28px;
+          font-size: 1rem;
         }
 
-        .phone-app-icon.blocked { background: var(--neu-red); }
-        .phone-app-icon.allowed { background: var(--neu-green); }
+        .phone-app-info {
+          flex: 1;
+          display: flex;
+          text-align: left;
+          flex-direction: column;
+          gap: 0.2rem;
+        }
 
         .phone-app-name {
-            font-weight: 700;
-            font-size: 0.8rem;
+          font-size: 0.75rem;
+          font-weight: 700;
         }
 
         .phone-app-status {
-            font-size: 0.65rem;
-            font-weight: 600;
-            color: var(--text-secondary-light);
-            text-transform: uppercase;
-        }
-
-        /* === STICKERS === */
-        .sticker {
-            position: absolute;
-            padding: 0.6rem 1rem;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            border: var(--border);
-            box-shadow: var(--shadow-sm);
-            z-index: 10;
-        }
-
-        .sticker-1 {
-            top: 5%;
-            right: 0;
-            background: var(--accent);
-            color: white;
-            transform: rotate(8deg);
-        }
-
-        .sticker-2 {
-            bottom: 25%;
-            left: -5%;
-            background: var(--neu-green);
-            color: var(--neu-black);
-            transform: rotate(-6deg);
-        }
-
-        .sticker-3 {
-            top: 35%;
-            right: -10%;
-            background: var(--neu-cyan);
-            color: var(--neu-black);
-            transform: rotate(4deg);
-        }
-
-        /* === TIME CAPSULE SECTION === */
-        .time-capsule {
-            padding: 6rem 2rem;
-            background: var(--primary);
-            position: relative;
-        }
-
-        .time-capsule::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 16px;
-            background: repeating-linear-gradient(
-                90deg,
-                var(--neu-black) 0px,
-                var(--neu-black) 16px,
-                var(--neu-yellow) 16px,
-                var(--neu-yellow) 32px
-            );
-        }
-
-        .capsule-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .capsule-header {
-            text-align: center;
-            margin-bottom: 2.5rem;
-        }
-
-        .capsule-icon {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            display: inline-block;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(-3deg); }
-            50% { transform: translateY(-10px) rotate(3deg); }
-        }
-
-        .capsule-title {
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 900;
-            color: white;
-            margin-bottom: 0.75rem;
-        }
-
-        .capsule-subtitle {
-            font-size: 1.1rem;
-            color: var(--neu-yellow);
-            max-width: 550px;
-            margin: 0 auto;
-            font-weight: 500;
-        }
-
-        .capsule-form {
-            background: var(--surface-light);
-            border: var(--border);
-            box-shadow: 8px 8px 0px var(--neu-black);
-            padding: 2.5rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.25rem;
-        }
-
-        .form-label {
-            display: block;
-            font-weight: 700;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--neu-black);
-        }
-
-        .form-input,
-        .form-textarea {
-            width: 100%;
-            padding: 0.875rem 1rem;
-            font-family: var(--font-display);
-            font-size: 1rem;
-            border: var(--border);
-            background: var(--background-light);
-            transition: all 0.15s ease;
-            font-weight: 500;
-        }
-
-        .form-input:focus,
-        .form-textarea:focus {
-            outline: none;
-            box-shadow: var(--shadow);
-            transform: translate(-2px, -2px);
-        }
-
-        .form-textarea {
-            min-height: 160px;
-            max-height: 400px;
-            resize: none;
-            line-height: 1.6;
-            transition: min-height 0.2s ease;
-        }
-
-        .form-helper {
-            font-size: 0.8rem;
-            color: var(--primary);
-            margin-top: 0.4rem;
-            font-weight: 600;
-        }
-
-        .capsule-prompts {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.4rem;
-            margin-bottom: 1rem;
-        }
-
-        .prompt-tag {
-            padding: 0.4rem 0.75rem;
-            background: var(--neu-lavender);
-            border: 2px solid var(--neu-black);
-            font-size: 0.7rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.1s ease;
-        }
-
-        .prompt-tag:hover {
-            background: var(--primary);
-            color: white;
-            transform: translate(-2px, -2px);
-            box-shadow: 2px 2px 0px var(--neu-black);
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.25rem;
-        }
-
-        .capsule-note {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
-            padding: 1rem;
-            background: var(--neu-cyan);
-            border: 2px dashed var(--neu-black);
-            margin-top: 1.25rem;
-        }
-
-        .capsule-note-icon {
-            font-size: 1.25rem;
-            flex-shrink: 0;
-        }
-
-        .capsule-note-text {
-            font-size: 0.85rem;
-            line-height: 1.5;
-            font-weight: 500;
-        }
-
-        .form-submit-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 2px dashed var(--neu-border);
-        }
-
-        .delivery-date {
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        .delivery-date strong {
-            display: block;
-            font-size: 1.1rem;
-            color: var(--primary);
-            font-weight: 900;
-        }
-
-        /* === FEATURES SECTION === */
-        .features {
-            padding: 6rem 2rem;
-            background: var(--surface-light);
-            border-top: var(--border);
-            border-bottom: var(--border);
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 3.5rem;
-        }
-
-        .section-tag {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            background: var(--neu-black);
-            color: var(--neu-yellow);
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 1.25rem;
-            border: var(--border);
-        }
-
-        .section-title {
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 900;
-            letter-spacing: -0.02em;
-            margin-bottom: 0.75rem;
-            color: var(--neu-black);
-        }
-
-        .section-subtitle {
-            font-size: 1.1rem;
-            color: var(--text-secondary-light);
-            max-width: 550px;
-            margin: 0 auto;
-            font-weight: 500;
-        }
-
-        .features-intro {
-            max-width: 800px;
-            margin: 2rem auto 3rem;
-            padding: 2rem;
-            background: var(--neu-lavender);
-            border: var(--border);
-            box-shadow: var(--shadow);
-            transform: rotate(-0.5deg);
-        }
-
-        .features-intro:hover {
-            transform: rotate(0deg);
-        }
-
-        .features-intro-text {
-            font-size: 1.05rem;
-            line-height: 1.7;
-            color: var(--text-primary-light);
-            font-weight: 500;
-            text-align: center;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 1.5rem;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .feature-card {
-            background: var(--background-light);
-            border: var(--border);
-            box-shadow: var(--shadow);
-            padding: 1.75rem;
-            transition: all 0.15s ease;
-        }
-
-        .feature-card:hover {
-            transform: translate(-2px, -2px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        /* Rotate cards slightly for neubrutalism effect */
-        .feature-card:nth-child(1) { transform: rotate(-0.5deg); }
-        .feature-card:nth-child(2) { transform: rotate(0.3deg); }
-        .feature-card:nth-child(3) { transform: rotate(-0.3deg); }
-        .feature-card:nth-child(4) { transform: rotate(0.5deg); }
-        .feature-card:nth-child(5) { transform: rotate(-0.4deg); }
-        .feature-card:nth-child(6) { transform: rotate(0.2deg); }
-
-        .feature-card:hover { transform: translate(-2px, -2px) rotate(0deg) !important; }
-
-        .feature-icon {
-            width: 56px;
-            height: 56px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.75rem;
-            border: var(--border);
-            margin-bottom: 1.25rem;
-        }
-
-        .feature-card:nth-child(1) .feature-icon { background: var(--neu-pink); }
-        .feature-card:nth-child(2) .feature-icon { background: var(--neu-cyan); }
-        .feature-card:nth-child(3) .feature-icon { background: var(--neu-green); }
-        .feature-card:nth-child(4) .feature-icon { background: var(--neu-orange); }
-        .feature-card:nth-child(5) .feature-icon { background: var(--neu-lavender); }
-        .feature-card:nth-child(6) .feature-icon { background: var(--neu-yellow); }
-
-        .feature-title {
-            font-size: 1.2rem;
-            font-weight: 900;
-            margin-bottom: 0.5rem;
-            color: var(--neu-black);
-        }
-
-        .feature-desc {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: var(--text-secondary-light);
-            font-weight: 500;
-        }
-
-        /* === IMPACT SECTION === */
-        .impact {
-            padding: 6rem 2rem;
-            background: var(--neu-green);
-            position: relative;
-        }
-
-        .impact::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 16px;
-            background: repeating-linear-gradient(
-                90deg,
-                var(--neu-black) 0px,
-                var(--neu-black) 16px,
-                var(--surface-light) 16px,
-                var(--surface-light) 32px
-            );
-        }
-
-        .impact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            max-width: 1100px;
-            margin: 0 auto;
-            align-items: center;
-        }
-
-        .impact-content h2 {
-            font-size: clamp(2rem, 4vw, 2.75rem);
-            font-weight: 900;
-            margin-bottom: 1.25rem;
-            color: var(--neu-black);
-        }
-
-        .impact-content p {
-            font-size: 1.05rem;
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
-            font-weight: 500;
-            color: var(--neu-black);
-        }
-
-        .impact-stat-box {
-            background: var(--surface-light);
-            border: var(--border);
-            box-shadow: 8px 8px 0px var(--neu-black);
-            padding: 2.5rem;
-            text-align: center;
-            transform: rotate(1deg);
-        }
-
-        .impact-stat-number {
-            font-size: 5rem;
-            font-weight: 900;
-            line-height: 1;
-            color: var(--primary);
-        }
-
-        .impact-stat-label {
-            font-size: 1.25rem;
-            font-weight: 900;
-            margin-top: 0.5rem;
-            color: var(--neu-black);
-        }
-
-        .impact-stat-desc {
-            font-size: 0.8rem;
-            margin-top: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-weight: 700;
-            color: var(--text-secondary-light);
-        }
-
-        .impact-causes {
-            display: flex;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-            margin-top: 1.5rem;
-        }
-
-        .cause-tag {
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-            padding: 0.6rem 1rem;
-            background: var(--neu-black);
-            color: white;
-            border: 2px solid var(--neu-black);
-            font-weight: 700;
-            font-size: 0.85rem;
-        }
-
-        /* === PRICING SECTION === */
-        .pricing {
-            padding: 6rem 2rem;
-            background: var(--background-light);
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .pricing-card {
-            background: var(--surface-light);
-            border: var(--border);
-            box-shadow: var(--shadow);
-            padding: 2rem;
-            position: relative;
-            transition: all 0.15s ease;
-        }
-
-        .pricing-card:hover {
-            transform: translate(-2px, -2px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .pricing-card.featured {
-            background: var(--neu-yellow);
-            transform: scale(1.03) rotate(-1deg);
-            z-index: 2;
-        }
-
-        .pricing-card.featured:hover {
-            transform: scale(1.03) rotate(0deg) translate(-2px, -2px);
-        }
-
-        .pricing-badge {
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 0.4rem 1.25rem;
-            background: var(--primary);
-            color: white;
-            font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            border: var(--border);
-        }
-
-        .pricing-name {
-            font-size: 1.1rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 0.75rem;
-            color: var(--neu-black);
-        }
-
-        .pricing-price {
-            margin-bottom: 1.25rem;
-        }
-
-        .pricing-amount {
-            font-size: 3rem;
-            font-weight: 900;
-            color: var(--neu-black);
-        }
-
-        .pricing-period {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--text-secondary-light);
-        }
-
-        .pricing-features {
-            list-style: none;
-            margin-bottom: 1.5rem;
-        }
-
-        .pricing-features li {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            padding: 0.6rem 0;
-            border-bottom: 2px dashed var(--neu-border);
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        .pricing-features li:last-child {
-            border-bottom: none;
-        }
-
-        .pricing-check {
-            font-size: 1.1rem;
-        }
-
-        /* === CTA SECTION === */
-        .cta {
-            padding: 6rem 2rem;
-            background: var(--neu-black);
-            color: white;
-            text-align: center;
-        }
-
-        .cta-container {
-            max-width: 650px;
-            margin: 0 auto;
-        }
-
-        .cta-icon {
-            font-size: 3.5rem;
-            margin-bottom: 1.25rem;
-        }
-
-        .cta-title {
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 900;
-            margin-bottom: 0.75rem;
-        }
-
-        .cta-subtitle {
-            font-size: 1.1rem;
-            color: var(--neu-yellow);
-            margin-bottom: 2rem;
-            font-weight: 500;
-        }
-
-        .cta-form {
-            display: flex;
-            gap: 0.75rem;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .cta-input {
-            flex: 1;
-            padding: 1rem 1.25rem;
-            font-family: var(--font-display);
-            font-size: 1rem;
-            border: var(--border);
-            background: var(--surface-light);
-            font-weight: 500;
-        }
-
-        .cta-input:focus {
-            outline: none;
-            box-shadow: var(--shadow);
-        }
-
-        /* === FOOTER === */
-        footer {
-            padding: 3rem 2rem 1.5rem;
-            background: var(--neu-yellow);
-            border-top: var(--border);
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 2.5rem;
-            max-width: 1100px;
-            margin: 0 auto 2rem;
-        }
-
-        .footer-brand p {
-            margin-top: 0.75rem;
-            font-size: 0.9rem;
-            line-height: 1.6;
-            color: var(--text-secondary-light);
-            font-weight: 500;
-        }
-
-        .footer-column h4 {
-            font-size: 0.8rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--neu-black);
-            color: var(--neu-black);
-        }
-
-        .footer-column ul {
-            list-style: none;
-        }
-
-        .footer-column ul li {
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-column ul a {
-            color: var(--text-primary-light);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.15s ease;
-        }
-
-        .footer-column ul a:hover {
-            text-decoration: underline;
-            text-underline-offset: 3px;
-        }
-
-        .footer-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 1.5rem;
-            border-top: 2px solid var(--neu-black);
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .footer-copyright {
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--text-secondary-light);
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 0.5rem;
-        }
-
-        .footer-social a {
-            width: 40px;
-            height: 40px;
-            background: var(--neu-black);
-            color: var(--neu-yellow);
-            border: 2px solid var(--neu-black);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 0.85rem;
-            transition: all 0.1s ease;
-        }
-
-        .footer-social a:hover {
-            background: var(--primary);
-            color: white;
-            transform: translate(-2px, -2px);
-            box-shadow: 2px 2px 0px var(--neu-black);
-        }
-
-        /* === MODAL === */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(26, 26, 46, 0.9);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            padding: 2rem;
-        }
-
-        .modal-overlay.active {
-            display: flex;
-        }
-
-        .modal {
-            background: var(--surface-light);
-            border: var(--border);
-            box-shadow: 12px 12px 0px var(--neu-black);
-            padding: 2.5rem;
-            max-width: 450px;
-            width: 100%;
-            text-align: center;
-            position: relative;
-            animation: modalPop 0.2s ease;
-        }
-
-        @keyframes modalPop {
-            from { opacity: 0; transform: scale(0.95); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 0.75rem;
-            right: 0.75rem;
-            width: 36px;
-            height: 36px;
-            background: var(--neu-black);
-            color: white;
-            border: none;
-            font-size: 1.25rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-        }
-
-        .modal-icon {
-            font-size: 3.5rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .modal-title {
-            font-size: 1.75rem;
-            font-weight: 900;
-            margin-bottom: 0.5rem;
-            color: var(--neu-black);
-        }
-
-        .modal-message {
-            font-size: 0.95rem;
-            margin-bottom: 1.25rem;
-            line-height: 1.6;
-            color: var(--text-secondary-light);
-            font-weight: 500;
-        }
-
-        .modal-date {
-            background: var(--neu-yellow);
-            border: var(--border);
-            padding: 0.875rem;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        .modal-date strong {
-            display: block;
-            font-size: 1.1rem;
-            color: var(--primary);
-            font-weight: 900;
-        }
-
-        /* === RESPONSIVE === */
-        @media (max-width: 1024px) {
-            .hero-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero-subtitle { margin-left: auto; margin-right: auto; }
-            .hero-actions { justify-content: center; }
-            .hero-visual { margin-top: 2.5rem; }
-            .phone-container { transform: none; }
-            .impact-grid { grid-template-columns: 1fr; }
-            .impact-stat-box { transform: none; }
-            .pricing-grid { grid-template-columns: 1fr; max-width: 380px; }
-            .pricing-card.featured { transform: none; }
-            .footer-grid { grid-template-columns: 1fr 1fr; }
-        }
-
-        @media (max-width: 768px) {
-            nav { padding: 0.875rem 1.25rem; }
-            .nav-links { display: none; }
-            .hero { padding: 7rem 1.25rem 4rem; }
-            .hero-title { font-size: 2rem; }
-            .form-row { grid-template-columns: 1fr; }
-            .form-submit-row { flex-direction: column; gap: 1.25rem; text-align: center; }
-            .cta-form { flex-direction: column; }
-            .footer-grid { grid-template-columns: 1fr; }
-            .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
-            .sticker { display: none; }
-            .features-grid { grid-template-columns: 1fr; }
-
-            /* Phone mockup mobile fixes */
-            .phone-container {
-                transform: none;
-                margin: 2rem auto;
-                max-width: 280px;
-            }
-
-            .phone-mockup {
-                width: 100%;
-                max-width: 280px;
-                padding: 0.5rem;
-            }
-
-            .phone-screen {
-                padding: 1rem;
-                min-height: 420px;
-            }
-
-            .phone-stats {
-                padding: 1rem;
-                margin-bottom: 0.75rem;
-            }
-
-            .phone-time-display {
-                font-size: 2.2rem;
-            }
-
-            .phone-app {
-                padding: 0.5rem;
-                gap: 0.5rem;
-            }
-
-            .phone-app-icon {
-                width: 28px;
-                height: 28px;
-                font-size: 1rem;
-            }
-
-            .phone-app-info {
-                flex: 1;
-                display: flex;
-                text-align: left;
-                flex-direction: column;
-                gap: 0.2rem;
-            }
-
-            .phone-app-name {
-                font-size: 0.75rem;
-                font-weight: 700;
-            }
-
-            .phone-app-status {
-                font-size: 0.6rem;
-                color: var(--text-secondary-light);
-            }
-        }
-
-        /* === ANIMATIONS === */
-        .animate {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .animate.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+          font-size: 0.6rem;
+          color: var(--text-secondary-light);
+        }
+      }
+
+      /* === ANIMATIONS === */
+      .animate {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .animate.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Navigation -->
     <nav>
-        <div class="nav-container">
-            <a href="#" class="logo">
-                <div class="logo-box">ت</div>
-                <span class="logo-text">Tawazn</span>
-                <span class="logo-arabic">توازن</span>
-            </a>
-            <div class="nav-links">
-                <a href="#features">Features</a>
-                <a href="#impact">Impact</a>
-                <a href="#pricing">Pricing</a>
-                <a href="#capsule" class="btn btn-primary">Write Resolution</a>
-            </div>
+      <div class="nav-container">
+        <a href="#" class="logo">
+          <div class="logo-box">
+            <img src="/assets/logo-mark.png" alt="Tawazn Logo" />
+          </div>
+          <span class="logo-text">Tawazn</span>
+          <span class="logo-arabic">توازن</span>
+        </a>
+        <div class="nav-links">
+          <a href="#features">Features</a>
+          <a href="#impact">Impact</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#capsule" class="btn btn-primary">Write Resolution</a>
         </div>
+      </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-grid">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <span class="hero-badge-dot"></span>
-                    Launching New Year 2026
-                </div>
-                                <h1 class="hero-title">
-                    Find Your<br>
-                    <span class="hero-title-highlight">Digital Balance</span>
-                </h1>
-                <p class="hero-subtitle">
-                    Reclaim your time. Protect your focus. Live with intention. 
-                    Write your 2026 resolution—we'll send it back to you in a year.
-                </p>
-                <div class="hero-actions">
-                    <a href="#capsule" class="btn btn-primary btn-large">✍️ Write Resolution</a>
-                    <a href="#features" class="btn btn-secondary btn-large">See Features →</a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="sticker sticker-1">2.5h Saved</div>
-                <div class="sticker sticker-2">50% Charity</div>
-                <div class="sticker sticker-3">No Ads</div>
-                <div class="phone-container">
-                    <div class="phone-mockup">
-                        <div class="phone-screen">
-                            <div class="phone-header">
-                                <p class="phone-greeting">Assalamu 'Alaikum 👋</p>
-                                <p class="phone-date">Today's Balance</p>
-                            </div>
-                            <div class="phone-stats">
-                                <p class="phone-time-display">3:24</p>
-                                <p class="phone-time-label">Screen Time Today</p>
-                                <div class="phone-progress">
-                                    <div class="phone-progress-bar"></div>
-                                </div>
-                            </div>
-                                <div class="phone-apps">
-                                <div class="phone-app">
-                                    <div class="phone-app-icon blocked">📱</div>
-                                    <div class="phone-app-info">
-                                        <p class="phone-app-name" data-i18n="hero.phone.apps.instagram.name">Instagram</p>
-                                        <p class="phone-app-status" data-i18n="hero.phone.apps.instagram.status">🔒 Blocked until Maghrib</p>
-                                    </div>
-                                </div>
-                                <div class="phone-app">
-                                    <div class="phone-app-icon allowed">📖</div>
-                                    <div class="phone-app-info">
-                                        <p class="phone-app-name" data-i18n="hero.phone.apps.quran.name">Quran</p>
-                                        <p class="phone-app-status" data-i18n="hero.phone.apps.quran.status">✓ 45 min today</p>
-                                    </div>
-                                </div>
-                                <div class="phone-app">
-                                    <div class="phone-app-icon allowed">🕌</div>
-                                    <div class="phone-app-info">
-                                        <p class="phone-app-name" data-i18n="hero.phone.apps.prayer.name">Prayer</p>
-                                        <p class="phone-app-status" data-i18n="hero.phone.apps.prayer.status">✓ 5/5 Complete</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            Launching New Year 2026
+          </div>
+          <h1 class="hero-title">
+            Find Your<br />
+            <span class="hero-title-highlight">Digital Balance</span>
+          </h1>
+          <p class="hero-subtitle">
+            Reclaim your time. Protect your focus. Live with intention. Write
+            your 2026 resolution—we'll send it back to you in a year.
+          </p>
+          <div class="hero-actions">
+            <a href="#capsule" class="btn btn-primary btn-large"
+              >✍️ Write Resolution</a
+            >
+            <a href="#features" class="btn btn-secondary btn-large"
+              >See Features →</a
+            >
+          </div>
         </div>
+        <div class="hero-visual">
+          <div class="sticker sticker-1">2.5h Saved</div>
+          <div class="sticker sticker-2">50% Charity</div>
+          <div class="sticker sticker-3">No Ads</div>
+          <div class="phone-container">
+            <div class="phone-mockup">
+              <div class="phone-screen">
+                <div class="phone-header">
+                  <p class="phone-greeting">Assalamu 'Alaikum 👋</p>
+                  <p class="phone-date">Today's Balance</p>
+                </div>
+                <div class="phone-stats">
+                  <p class="phone-time-display">3:24</p>
+                  <p class="phone-time-label">Screen Time Today</p>
+                  <div class="phone-progress">
+                    <div class="phone-progress-bar"></div>
+                  </div>
+                </div>
+                <div class="phone-apps">
+                  <div class="phone-app">
+                    <div class="phone-app-icon blocked">📱</div>
+                    <div class="phone-app-info">
+                      <p
+                        class="phone-app-name"
+                        data-i18n="hero.phone.apps.instagram.name"
+                      >
+                        Instagram
+                      </p>
+                      <p
+                        class="phone-app-status"
+                        data-i18n="hero.phone.apps.instagram.status"
+                      >
+                        🔒 Blocked until Maghrib
+                      </p>
+                    </div>
+                  </div>
+                  <div class="phone-app">
+                    <div class="phone-app-icon allowed">📖</div>
+                    <div class="phone-app-info">
+                      <p
+                        class="phone-app-name"
+                        data-i18n="hero.phone.apps.quran.name"
+                      >
+                        Quran
+                      </p>
+                      <p
+                        class="phone-app-status"
+                        data-i18n="hero.phone.apps.quran.status"
+                      >
+                        ✓ 45 min today
+                      </p>
+                    </div>
+                  </div>
+                  <div class="phone-app">
+                    <div class="phone-app-icon allowed">💬</div>
+                    <div class="phone-app-info">
+                      <p
+                        class="phone-app-name"
+                        data-i18n="hero.phone.apps.whatsapp.name"
+                      >
+                        Whatsapp
+                      </p>
+                      <p
+                        class="phone-app-status"
+                        data-i18n="hero.phone.apps.whatsapp.status"
+                      >
+                        ✓ 19 min today
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Time Capsule Section -->
     <section class="time-capsule" id="capsule">
-        <div class="capsule-container">
-            <div class="capsule-header">
-                <div class="capsule-icon">💊</div>
-                <h2 class="capsule-title">2026 Time Capsule</h2>
-                <p class="capsule-subtitle">
-                    Write a message to your future self. We'll deliver it on January 1st, 2027—with your screen time journey.
-                </p>
-            </div>
-            <form class="capsule-form" id="capsuleForm">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label class="form-label" for="name" data-i18n="timeCapsule.form.nameLabel">Name</label>
-                        <input type="text" id="name" class="form-input" placeholder="What should we call you?" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label" for="email" data-i18n="timeCapsule.form.emailLabel">Email</label>
-                        <input type="email" id="email" class="form-input" placeholder="Where should we send it?" required>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-label" for="resolution" data-i18n="timeCapsule.form.resolutionLabel">2026 Resolution</label>
-                    <div class="capsule-prompts">
-                        <span class="prompt-tag" data-prompt="In 2026, I want to spend less time on my phone and more time ">📱 Less Phone</span>
-                        <span class="prompt-tag" data-prompt="By the end of 2026, I will have achieved ">🎯 Achievement</span>
-                        <span class="prompt-tag" data-prompt="Dear future me, I hope you have finally ">💌 Letter to Self</span>
-                        <span class="prompt-tag" data-prompt="I want to be more present with ">👨‍👩‍👧‍👦 Family Focus</span>
-                        <span class="prompt-tag" data-prompt="I want to strengthen my faith by ">🕌 Spiritual Growth</span>
-                    </div>
-                    <textarea id="resolution" class="form-textarea" placeholder="Write your resolution, hopes, dreams, or a letter to your future self..." required></textarea>
-                    <p class="form-helper" data-i18n="timeCapsule.form.helper">💡 Be specific! Future you will appreciate the details.</p>
-                </div>
-
-                <div class="capsule-note">
-                    <span class="capsule-note-icon">🔒</span>
-                    <p class="capsule-note-text">
-                        <strong data-i18n="timeCapsule.form.note.title">Your message is private.</strong> <span data-i18n="timeCapsule.form.note.text">We'll store it securely and send it back with your Tawazn journey—time saved, streaks, and milestones.</span>
-                    </p>
-                </div>
-
-<div class="form-submit-row">
-                    <div class="delivery-date">
-                        Delivery Date:
-                        <strong>January 1st, 2027</strong>
-                    </div>
-                    <button type="submit" class="btn btn-accent btn-large">
-                        🚀 Seal My Capsule
-                    </button>
-                </div>
-            </form>
+      <div class="capsule-container">
+        <div class="capsule-header">
+          <div class="capsule-icon">💊</div>
+          <h2 class="capsule-title">2026 Time Capsule</h2>
+          <p class="capsule-subtitle">
+            Write a message to your future self. We'll deliver it on January
+            1st, 2027—with your screen time journey.
+          </p>
         </div>
+        <form class="capsule-form" id="capsuleForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label
+                class="form-label"
+                for="name"
+                data-i18n="timeCapsule.form.nameLabel"
+                >Name</label
+              >
+              <input
+                type="text"
+                id="name"
+                class="form-input"
+                placeholder="What should we call you?"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label
+                class="form-label"
+                for="email"
+                data-i18n="timeCapsule.form.emailLabel"
+                >Email</label
+              >
+              <input
+                type="email"
+                id="email"
+                class="form-input"
+                placeholder="Where should we send it?"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label
+              class="form-label"
+              for="resolution"
+              data-i18n="timeCapsule.form.resolutionLabel"
+              >2026 Resolution</label
+            >
+            <div class="capsule-prompts">
+              <span
+                class="prompt-tag"
+                data-prompt="In 2026, I want to spend less time on my phone and more time "
+                >📱 Less Phone</span
+              >
+              <span
+                class="prompt-tag"
+                data-prompt="By the end of 2026, I will have achieved "
+                >🎯 Achievement</span
+              >
+              <span
+                class="prompt-tag"
+                data-prompt="Dear future me, I hope you have finally "
+                >💌 Letter to Self</span
+              >
+              <span
+                class="prompt-tag"
+                data-prompt="I want to be more present with "
+                >👨‍👩‍👧‍👦 Family Focus</span
+              >
+              <span
+                class="prompt-tag"
+                data-prompt="I want to strengthen my faith by "
+                >🕌 Spiritual Growth</span
+              >
+            </div>
+            <textarea
+              id="resolution"
+              class="form-textarea"
+              placeholder="Write your resolution, hopes, dreams, or a letter to your future self..."
+              required
+            ></textarea>
+            <p class="form-helper" data-i18n="timeCapsule.form.helper">
+              💡 Be specific! Future you will appreciate the details.
+            </p>
+          </div>
+
+          <div class="capsule-note">
+            <span class="capsule-note-icon">🔒</span>
+            <p class="capsule-note-text">
+              <strong data-i18n="timeCapsule.form.note.title"
+                >Your message is private.</strong
+              >
+              <span data-i18n="timeCapsule.form.note.text"
+                >We'll store it securely and send it back with your Tawazn
+                journey—time saved, streaks, and milestones.</span
+              >
+            </p>
+          </div>
+
+          <div class="form-submit-row">
+            <div class="delivery-date">
+              Delivery Date:
+              <strong>January 1st, 2027</strong>
+            </div>
+            <button type="submit" class="btn btn-accent btn-large">
+              🚀 Seal My Capsule
+            </button>
+          </div>
+        </form>
+      </div>
     </section>
 
     <!-- Features Section -->
     <section class="features" id="features">
-        <div class="section-header animate">
-            <div class="section-tag">Features</div>
-            <h2 class="section-title">Everything You Need</h2>
-            <p class="section-subtitle">
-                Powerful tools for healthier digital habits
-            </p>
-        </div>
+      <div class="section-header animate">
+        <div class="section-tag">Features</div>
+        <h2 class="section-title">Everything You Need</h2>
+        <p class="section-subtitle">
+          Powerful tools for healthier digital habits
+        </p>
+      </div>
 
-        <div class="features-intro animate">
-            <p class="features-intro-text" data-i18n="features.intro">
-                Tawazn is your digital wellness companion designed to help you find balance in a world filled with distractions. Rooted in Islamic principles, our app intelligently manages your screen time while encouraging spiritual growth and meaningful connections. Whether you're looking to reduce social media usage, focus during prayer times, or build healthier digital habits, Tawazn provides the tools and motivation you need to reclaim your time and live with intention.
-            </p>
-        </div>
+      <div class="features-intro animate">
+        <p class="features-intro-text" data-i18n="features.intro">
+          Tawazn is your digital wellness companion designed to help you find
+          balance in a world filled with distractions. Rooted in Islamic
+          principles, our app intelligently manages your screen time while
+          encouraging spiritual growth and meaningful connections. Whether
+          you're looking to reduce social media usage, focus during whatsapp
+          times, or build healthier digital habits, Tawazn provides the tools
+          and motivation you need to reclaim your time and live with intention.
+        </p>
+      </div>
 
-        <div class="features-grid">
-            <div class="feature-card animate">
-                <div class="feature-icon">🚫</div>
-                <h3 class="feature-title">Smart Blocking</h3>
-                <p class="feature-desc">
-                    Block distracting apps with unbreakable focus modes. Islamic motivational quotes when temptation strikes.
-                </p>
-            </div>
-            <div class="feature-card animate">
-                <div class="feature-icon">📊</div>
-                <h3 class="feature-title">Deep Analytics</h3>
-                <p class="feature-desc">
-                    See exactly where your time goes with beautiful charts. Track daily, weekly, monthly progress.
-                </p>
-            </div>
-            <div class="feature-card animate">
-                <div class="feature-icon">🕌</div>
-                <h3 class="feature-title">Prayer-Aware</h3>
-                <p class="feature-desc">
-                    Automatic blocking during salah times. Gentle reminders to step away and focus on what matters.
-                </p>
-            </div>
-            <div class="feature-card animate">
-                <div class="feature-icon">🌙</div>
-                <h3 class="feature-title">Ramadan Mode</h3>
-                <p class="feature-desc">
-                    Special features for the holy month—iftar schedules, Quran tracking, enhanced spiritual focus.
-                </p>
-            </div>
-            <div class="feature-card animate">
-                <div class="feature-icon">👥</div>
-                <h3 class="feature-title">Accountability</h3>
-                <p class="feature-desc">
-                    Connect with friends or family who can see your progress. Build better habits together.
-                </p>
-            </div>
-            <div class="feature-card animate">
-                <div class="feature-icon">🏆</div>
-                <h3 class="feature-title">Streaks & Wins</h3>
-                <p class="feature-desc">
-                    Celebrate consistency with daily streaks, achievements, and milestones. Every step counts.
-                </p>
-            </div>
+      <div class="features-grid">
+        <div class="feature-card animate">
+          <div class="feature-icon">🚫</div>
+          <h3 class="feature-title">Smart Blocking</h3>
+          <p class="feature-desc">
+            Block distracting apps with unbreakable focus modes. Islamic
+            motivational quotes when temptation strikes.
+          </p>
         </div>
+        <div class="feature-card animate">
+          <div class="feature-icon">📊</div>
+          <h3 class="feature-title">Deep Analytics</h3>
+          <p class="feature-desc">
+            See exactly where your time goes with beautiful charts. Track daily,
+            weekly, monthly progress.
+          </p>
+        </div>
+        <div class="feature-card animate">
+          <div class="feature-icon">🕌</div>
+          <h3 class="feature-title">Whatsapp-Aware</h3>
+          <p class="feature-desc">
+            Automatic blocking during salah times. Gentle reminders to step away
+            and focus on what matters.
+          </p>
+        </div>
+        <div class="feature-card animate">
+          <div class="feature-icon">🌙</div>
+          <h3 class="feature-title">Ramadan Mode</h3>
+          <p class="feature-desc">
+            Special features for the holy month—iftar schedules, Quran tracking,
+            enhanced spiritual focus.
+          </p>
+        </div>
+        <div class="feature-card animate">
+          <div class="feature-icon">👥</div>
+          <h3 class="feature-title">Accountability</h3>
+          <p class="feature-desc">
+            Connect with friends or family who can see your progress. Build
+            better habits together.
+          </p>
+        </div>
+        <div class="feature-card animate">
+          <div class="feature-icon">🏆</div>
+          <h3 class="feature-title">Streaks & Wins</h3>
+          <p class="feature-desc">
+            Celebrate consistency with daily streaks, achievements, and
+            milestones. Every step counts.
+          </p>
+        </div>
+      </div>
     </section>
 
     <!-- Impact Section -->
     <section class="impact" id="impact">
-        <div class="impact-grid">
-            <div class="impact-content animate">
-                <div class="section-tag">Our Impact</div>
-                <h2>Every Subscription Gives Back</h2>
-                <p>
-                    We believe in business that does good. 50% of revenue goes directly to humanitarian causes. 
-                    When you choose Tawazn, you're helping others too.
-                </p>
-                <p>
-                    In Islamic tradition, <strong>Sadaqah Jariyah</strong> is charity that keeps giving. Your subscription becomes ongoing charity.
-                </p>
-                <div class="impact-causes">
-                    <div class="cause-tag">🎓 Education</div>
-                    <div class="cause-tag">💧 Clean Water</div>
-                    <div class="cause-tag">🍞 Food Security</div>
-                    <div class="cause-tag">🏥 Healthcare</div>
-                </div>
-            </div>
-            <div class="impact-stat-box animate">
-                <div class="impact-stat-number">50%</div>
-                <div class="impact-stat-label">Revenue to Charity</div>
-                <p class="impact-stat-desc">Transparent • Verified Partners • Real Impact</p>
-            </div>
+      <div class="impact-grid">
+        <div class="impact-content animate">
+          <div class="section-tag">Our Impact</div>
+          <h2>Every Subscription Gives Back</h2>
+          <p>
+            We believe in business that does good. 50% of revenue goes directly
+            to humanitarian causes. When you choose Tawazn, you're helping
+            others too.
+          </p>
+          <p>
+            In Islamic tradition, <strong>Sadaqah Jariyah</strong> is charity
+            that keeps giving. Your subscription becomes ongoing charity.
+          </p>
+          <div class="impact-causes">
+            <div class="cause-tag">🎓 Education</div>
+            <div class="cause-tag">💧 Clean Water</div>
+            <div class="cause-tag">🍞 Food Security</div>
+            <div class="cause-tag">🏥 Healthcare</div>
+          </div>
         </div>
+        <div class="impact-stat-box animate">
+          <div class="impact-stat-number">50%</div>
+          <div class="impact-stat-label">Revenue to Charity</div>
+          <p class="impact-stat-desc">
+            Transparent • Verified Partners • Real Impact
+          </p>
+        </div>
+      </div>
     </section>
 
     <!-- Pricing Section -->
     <section class="pricing" id="pricing">
-        <div class="section-header animate">
-            <div class="section-tag">Pricing</div>
-            <h2 class="section-title">Fair for Everyone</h2>
-            <p class="section-subtitle">
-                Prices adjust based on your country's purchasing power
-            </p>
+      <div class="section-header animate">
+        <div class="section-tag">Pricing</div>
+        <h2 class="section-title">Fair for Everyone</h2>
+        <p class="section-subtitle">
+          Prices adjust based on your country's purchasing power
+        </p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card animate">
+          <h3 class="pricing-name">Free</h3>
+          <div class="pricing-price">
+            <span class="pricing-amount">$0</span>
+            <span class="pricing-period">/ forever</span>
+          </div>
+          <ul class="pricing-features">
+            <li><span class="pricing-check">✓</span> Basic tracking</li>
+            <li><span class="pricing-check">✓</span> 3 app limits</li>
+            <li><span class="pricing-check">✓</span> Whatsapp reminders</li>
+            <li><span class="pricing-check">✓</span> Daily insights</li>
+          </ul>
+          <a
+            href="#capsule"
+            class="btn btn-secondary"
+            style="width: 100%; justify-content: center"
+            >Get Started</a
+          >
         </div>
-        <div class="pricing-grid">
-            <div class="pricing-card animate">
-                <h3 class="pricing-name">Free</h3>
-                <div class="pricing-price">
-                    <span class="pricing-amount">$0</span>
-                    <span class="pricing-period">/ forever</span>
-                </div>
-                <ul class="pricing-features">
-                    <li><span class="pricing-check">✓</span> Basic tracking</li>
-                    <li><span class="pricing-check">✓</span> 3 app limits</li>
-                    <li><span class="pricing-check">✓</span> Prayer reminders</li>
-                    <li><span class="pricing-check">✓</span> Daily insights</li>
-                </ul>
-                <a href="#capsule" class="btn btn-secondary" style="width: 100%; justify-content: center;">Get Started</a>
-            </div>
-            <div class="pricing-card featured animate">
-                <div class="pricing-badge">Most Popular</div>
-                <h3 class="pricing-name">Premium</h3>
-                <div class="pricing-price">
-                    <span class="pricing-amount">$4.99</span>
-                    <span class="pricing-period">/ month</span>
-                </div>
-                <ul class="pricing-features">
-                    <li><span class="pricing-check">✓</span> Everything Free</li>
-                    <li><span class="pricing-check">✓</span> Unlimited blocking</li>
-                    <li><span class="pricing-check">✓</span> Advanced analytics</li>
-                    <li><span class="pricing-check">✓</span> Ramadan mode</li>
-                    <li><span class="pricing-check">✓</span> Accountability</li>
-                </ul>
-                <a href="#capsule" class="btn btn-primary" style="width: 100%; justify-content: center;">Join Waitlist</a>
-            </div>
-            <div class="pricing-card animate">
-                <h3 class="pricing-name">Blessed</h3>
-                <div class="pricing-price">
-                    <span class="pricing-amount">$9.99</span>
-                    <span class="pricing-period">/ month</span>
-                </div>
-                <ul class="pricing-features">
-                    <li><span class="pricing-check">✓</span> Everything Premium</li>
-                    <li><span class="pricing-check">✓</span> Family (5 devices)</li>
-                    <li><span class="pricing-check">✓</span> Double charity</li>
-                    <li><span class="pricing-check">✓</span> Charity dashboard</li>
-                    <li><span class="pricing-check">✓</span> Early access</li>
-                </ul>
-                <a href="#capsule" class="btn btn-secondary" style="width: 100%; justify-content: center;">Join Waitlist</a>
-            </div>
+        <div class="pricing-card featured animate">
+          <div class="pricing-badge">Most Popular</div>
+          <h3 class="pricing-name">Premium</h3>
+          <div class="pricing-price">
+            <span class="pricing-amount">$4.99</span>
+            <span class="pricing-period">/ month</span>
+          </div>
+          <ul class="pricing-features">
+            <li><span class="pricing-check">✓</span> Everything Free</li>
+            <li><span class="pricing-check">✓</span> Unlimited blocking</li>
+            <li><span class="pricing-check">✓</span> Advanced analytics</li>
+            <li><span class="pricing-check">✓</span> Ramadan mode</li>
+            <li><span class="pricing-check">✓</span> Accountability</li>
+          </ul>
+          <a
+            href="#capsule"
+            class="btn btn-primary"
+            style="width: 100%; justify-content: center"
+            >Join Waitlist</a
+          >
         </div>
+        <div class="pricing-card animate">
+          <h3 class="pricing-name">Blessed</h3>
+          <div class="pricing-price">
+            <span class="pricing-amount">$9.99</span>
+            <span class="pricing-period">/ month</span>
+          </div>
+          <ul class="pricing-features">
+            <li><span class="pricing-check">✓</span> Everything Premium</li>
+            <li><span class="pricing-check">✓</span> Family (5 devices)</li>
+            <li><span class="pricing-check">✓</span> Double charity</li>
+            <li><span class="pricing-check">✓</span> Charity dashboard</li>
+            <li><span class="pricing-check">✓</span> Early access</li>
+          </ul>
+          <a
+            href="#capsule"
+            class="btn btn-secondary"
+            style="width: 100%; justify-content: center"
+            >Join Waitlist</a
+          >
+        </div>
+      </div>
     </section>
 
     <!-- CTA Section -->
     <section class="cta">
-        <div class="cta-container">
-            <div class="cta-icon">🚀</div>
-            <h2 class="cta-title">Start 2026 with Balance</h2>
-            <p class="cta-subtitle">
-                Join thousands ready to reclaim their time. Be first to know when we launch.
-            </p>
-            <form class="cta-form" id="waitlistForm">
-                <input type="email" class="cta-input" placeholder="Enter your email" required>
-                <button type="submit" class="btn btn-accent">Join Waitlist</button>
-            </form>
-        </div>
+      <div class="cta-container">
+        <div class="cta-icon">🚀</div>
+        <h2 class="cta-title">Start 2026 with Balance</h2>
+        <p class="cta-subtitle">
+          Join hundreds ready to reclaim their time. Be first to know when we
+          launch.
+        </p>
+        <form class="cta-form" id="waitlistForm">
+                <input
+            type="email"
+            class="cta-input"
+            placeholder="Enter your email"
+            required
+          />
+          <button type="submit" class="btn btn-accent">Join Waitlist</button>
+        </form>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <a href="#" class="logo">
-                    <div class="logo-box">ت</div>
-                    <span class="logo-text">Tawazn</span>
-                </a>
-                <p>
-                    Helping you find balance in a distracted world. 
-                    Built with purpose, designed for mindful living.
-                </p>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <div class="logo-box">
+              <img src="/assets/logo-mark.png" alt="Tawazn Logo" />
             </div>
-            <div class="footer-column">
-                <h4>Product</h4>
-                <ul>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#pricing">Pricing</a></li>
-                    <li><a href="#">Roadmap</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Company</h4>
-                <ul>
-                    <li><a href="#impact">Impact</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Blog</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Legal</h4>
-                <ul>
-                    <li><a href="#">Privacy</a></li>
-                    <li><a href="#">Terms</a></li>
-                </ul>
-            </div>
+            <span class="logo-text">Tawazn</span>
+          </a>
+          <p>
+            Helping you find balance in a distracted world. Built with purpose,
+            designed for mindful living.
+          </p>
         </div>
-        <div class="footer-bottom">
-            <p class="footer-copyright">© 2025 Tawazn. Made with ❤️ for mindful living.</p>
-            <div class="footer-social">
-                <a href="#">𝕏</a>
-                <a href="#">IG</a>
-                <a href="#">in</a>
-            </div>
+        <div class="footer-column">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#">Roadmap</a></li>
+          </ul>
         </div>
+        <div class="footer-column">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#impact">Impact</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">
+          © 2025 Tawazn. Made with ❤️ for mindful living.
+        </p>
+        <div class="footer-social">
+          <a href="#">𝕏</a>
+          <a href="#">IG</a>
+          <a href="#">in</a>
+        </div>
+      </div>
     </footer>
 
     <!-- Success Modal -->
     <div class="modal-overlay" id="successModal">
-        <div class="modal">
-            <button class="modal-close" onclick="closeModal()">×</button>
-            <div class="modal-icon">💊✨</div>
-            <h3 class="modal-title" data-i18n="modal.title">Capsule Sealed!</h3>
-            <p class="modal-message" data-i18n="modal.message">
-                Your resolution is safely stored. We'll send it back with your Tawazn journey summary.
-            </p>
-            <div class="modal-date">
-                <span data-i18n="modal.deliveryLabel">See you on:</span>
-                <strong data-i18n="modal.deliveryDate">January 1st, 2027</strong>
-            </div>
+      <div class="modal">
+        <button class="modal-close" onclick="closeModal()">×</button>
+        <div class="modal-icon">💊✨</div>
+        <h3 class="modal-title" data-i18n="modal.title">Capsule Sealed!</h3>
+        <p class="modal-message" data-i18n="modal.message">
+          Your resolution is safely stored. We'll send it back with your Tawazn
+          journey summary.
+        </p>
+        <div class="modal-date">
+          <span data-i18n="modal.deliveryLabel">See you on:</span>
+          <strong data-i18n="modal.deliveryDate">January 1st, 2027</strong>
         </div>
+      </div>
     </div>
 
     <!-- Error Modal -->
     <div class="modal-overlay" id="errorModal">
-        <div class="modal" style="background: var(--neu-red);">
-            <button class="modal-close" onclick="closeErrorModal()">×</button>
-            <div class="modal-icon">❌</div>
-            <h3 class="modal-title" data-i18n="errorModal.title">Submission Failed</h3>
-            <p class="modal-message" id="errorMessage" data-i18n="errorModal.unknownError">
-                Something went wrong. Please try again.
-            </p>
-            <div style="margin-top: 1.5rem;">
-                <button class="btn btn-secondary" onclick="closeErrorModal()" style="background: white; color: var(--neu-black);" data-i18n="errorModal.tryAgain">
-                    Try Again
-                </button>
-            </div>
+      <div class="modal" style="background: var(--neu-red)">
+        <button class="modal-close" onclick="closeErrorModal()">×</button>
+        <div class="modal-icon">❌</div>
+        <h3 class="modal-title" data-i18n="errorModal.title">
+          Submission Failed
+        </h3>
+        <p
+          class="modal-message"
+          id="errorMessage"
+          data-i18n="errorModal.unknownError"
+        >
+          Something went wrong. Please try again.
+        </p>
+        <div style="margin-top: 1.5rem">
+          <button
+            class="btn btn-secondary"
+            onclick="closeErrorModal()"
+            style="background: white; color: var(--neu-black)"
+            data-i18n="errorModal.tryAgain"
+          >
+            Try Again
+          </button>
         </div>
+      </div>
     </div>
 
     <script>
-        // Scroll animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.animate').forEach(el => observer.observe(el));
-
-        // Prompt tags
-        document.querySelectorAll('.prompt-tag').forEach(tag => {
-            tag.addEventListener('click', () => {
-                const textarea = document.getElementById('resolution');
-                textarea.value = tag.dataset.prompt;
-                textarea.focus();
-                textarea.setSelectionRange(textarea.value.length, textarea.value.length);
-            });
-        });
-
-        // Form handling is now managed by form-handler.js
-        // This code has been moved to js/form-handler.js for better organization
-
-        // Modal
-        function closeModal() {
-            document.getElementById('successModal').classList.remove('active');
-        }
-
-        function closeErrorModal() {
-            document.getElementById('errorModal').classList.remove('active');
-        }
-
-        document.getElementById('successModal').addEventListener('click', function(e) {
-            if (e.target === this) closeModal();
-        });
-
-        document.getElementById('errorModal').addEventListener('click', function(e) {
-            if (e.target === this) closeErrorModal();
-        });
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeModal();
-                closeErrorModal();
+      // Scroll animations
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
             }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      document
+        .querySelectorAll(".animate")
+        .forEach((el) => observer.observe(el));
+
+      // Prompt tags
+      document.querySelectorAll(".prompt-tag").forEach((tag) => {
+        tag.addEventListener("click", () => {
+          const textarea = document.getElementById("resolution");
+          textarea.value = tag.dataset.prompt;
+          textarea.focus();
+          textarea.setSelectionRange(
+            textarea.value.length,
+            textarea.value.length
+          );
+        });
+      });
+
+      // Form handling is now managed by form-handler.js
+      // This code has been moved to js/form-handler.js for better organization
+
+      // Modal
+      function closeModal() {
+        document.getElementById("successModal").classList.remove("active");
+      }
+
+      function closeErrorModal() {
+        document.getElementById("errorModal").classList.remove("active");
+      }
+
+      document
+        .getElementById("successModal")
+        .addEventListener("click", function (e) {
+          if (e.target === this) closeModal();
         });
 
-        // Auto-expanding textarea
-        const textarea = document.getElementById('resolution');
-        if (textarea) {
-            textarea.addEventListener('input', function() {
-                // Reset height to get accurate scrollHeight
-                this.style.height = 'auto';
+      document
+        .getElementById("errorModal")
+        .addEventListener("click", function (e) {
+          if (e.target === this) closeErrorModal();
+        });
 
-                // Set new height based on content
-                const newHeight = Math.min(this.scrollHeight, 400);
-                this.style.height = newHeight + 'px';
-            });
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      });
 
-            // Also handle paste events
-            textarea.addEventListener('paste', function() {
-                setTimeout(() => {
-                    this.style.height = 'auto';
-                    const newHeight = Math.min(this.scrollHeight, 400);
-                    this.style.height = newHeight + 'px';
-                }, 0);
-            });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          closeModal();
+          closeErrorModal();
         }
+      });
+
+      // Auto-expanding textarea
+      const textarea = document.getElementById("resolution");
+      if (textarea) {
+        textarea.addEventListener("input", function () {
+          // Reset height to get accurate scrollHeight
+          this.style.height = "auto";
+
+          // Set new height based on content
+          const newHeight = Math.min(this.scrollHeight, 400);
+          this.style.height = newHeight + "px";
+        });
+
+        // Also handle paste events
+        textarea.addEventListener("paste", function () {
+          setTimeout(() => {
+            this.style.height = "auto";
+            const newHeight = Math.min(this.scrollHeight, 400);
+            this.style.height = newHeight + "px";
+          }, 0);
+        });
+      }
     </script>
 
     <!-- Configuration Script -->
@@ -1819,5 +2086,5 @@
 
     <!-- i18n Script -->
     <script src="i18n.js"></script>
-</body>
+  </body>
 </html>

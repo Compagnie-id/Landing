@@ -18,11 +18,11 @@
     },
     "phone": {
       "greeting": "Assalamu 'Alaikum 👋",
-      "todayBalance": "Today's Balance",
+      "todayBalance": "Today's Productivity",
       "screenTime": "Screen Time Today",
       "blocked": "🔒 Blocked until Maghrib",
       "quran": "✓ 45 min today",
-      "prayer": "✓ 5/5 Complete",
+      "whatsapp": "✓ 19 min today",
       "apps": {
         "instagram": {
           "name": "Instagram",
@@ -32,16 +32,16 @@
           "name": "Quran",
           "status": "✓ 45 min today"
         },
-        "prayer": {
-          "name": "Prayer",
-          "status": "✓ 5/5 Complete"
+        "whatsapp": {
+          "name": "Whatsapp",
+          "status": "✓ 19 min today"
         }
       }
     }
   },
   "timeCapsule": {
-    "title": "2026 Time Capsule",
-    "subtitle": "Write a message to your future self. We'll deliver it on January 1st, 2027—with your screen time journey.",
+    "title": "Time Capsule",
+    "subtitle": "Write a message to your future self. The time capsule will guard and send it back to you on January 1st, 2027.",
     "form": {
       "nameLabel": "Name",
       "namePlaceholder": "Preferred name",
@@ -51,18 +51,18 @@
       "resolutionPlaceholder": "Write resolution, hopes, dreams, or a letter to future self...",
       "helper": "💡 Be specific! Details will be greatly appreciated in the future.",
       "prompts": {
-        "lessPhone": "📱 Less Phone",
-        "achievement": "🎯 Achievement",
-        "letterToSelf": "💌 Letter to Self",
-        "familyFocus": "👨‍👩‍👧‍👦 Family Focus",
-        "spiritualGrowth": "🕌 Spiritual Growth"
+        "lessPhone": "📱",
+        "achievement": "🎯",
+        "letterToSelf": "💌",
+        "familyFocus": "👨‍👩‍👧‍👦",
+        "spiritualGrowth": "🕌"
       },
       "promptTexts": {
-        "lessPhone": "In 2026, I want to spend less time on my phone and more time ",
-        "achievement": "By the end of 2026, I will have achieved ",
-        "letterToSelf": "Dear future me, I hope you have finally ",
-        "familyFocus": "I want to be more present with ",
-        "spiritualGrowth": "I want to strengthen my faith by "
+        "lessPhone": "In 2026, I want to reduce scrolling time and have more time for ...",
+        "achievement": "By the end of 2026, I will have achieved ...",
+        "letterToSelf": "Hi future me, I hope you have finally ...",
+        "familyFocus": "I want more time to accompany ...",
+        "spiritualGrowth": "I want to become better with ..."
       },
       "note": {
         "title": "Message is private.",
@@ -77,7 +77,7 @@
     "tag": "Features",
     "title": "Everything You Need",
     "subtitle": "Powerful tools for healthier digital habits",
-    "intro": "Tawazn is your digital wellness companion designed to help you find balance in a world filled with distractions. Rooted in Islamic principles, our app intelligently manages your screen time while encouraging spiritual growth and meaningful connections. Whether you're looking to reduce social media usage, focus during prayer times, or build healthier digital habits, Tawazn provides the tools and motivation you need to reclaim your time and live with intention.",
+    "intro": "Tawazn is your digital wellness companion designed to help you find balance in a world filled with distractions. Rooted in Islamic principles, our app intelligently manages your screen time while encouraging spiritual growth and meaningful connections. Whether you're looking to reduce social media usage, focus during whatsapp times, or build healthier digital habits, Tawazn provides the tools and motivation you need to reclaim your time and live with intention.",
     "cards": [
       {
         "icon": "🚫",
@@ -91,7 +91,7 @@
       },
       {
         "icon": "🕌",
-        "title": "Prayer-Aware",
+        "title": "Whatsapp-Aware",
         "desc": "Automatic blocking during salah times. Gentle reminders to step away and focus on what matters."
       },
       {
@@ -138,7 +138,7 @@
         "features": [
           "Basic tracking",
           "3 app limits",
-          "Prayer reminders",
+          "Whatsapp reminders",
           "Daily insights"
         ],
         "button": "Get Started"
